@@ -20,13 +20,9 @@ const Logo = () => (
 );
 
 const navItems = [
-  {     label: "Home",
-    path: "/"
-  },
-  { 
-    label: "Services", 
-    path: "/services"
-  },
+  { label: "Home", path: "/" },
+  { label: "Services", path: "/services" },
+  { label: "Data Transformation", path: "/data-transformation" },
   { label: "Case Studies", path: "/case-studies" },
   { label: "About", path: "/about" },
   { label: "Careers", path: "/careers" },

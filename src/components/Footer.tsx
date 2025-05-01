@@ -2,6 +2,16 @@ import { NavLink } from "react-router-dom";
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // Small delay to ensure route change happens before scrolling
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }, 100);
+  };
+
   return (
     <footer className="bg-navy-500 text-white py-16">
       <div className="container mx-auto px-4">
@@ -51,7 +61,11 @@ const Footer = () => {
                 { name: "Managed IT Services", to: "/services" },
               ].map(({ name, to }) => (
                 <li key={name}>
-                  <NavLink to={to} className="text-gray-300 hover:text-white transition-colors">
+                  <NavLink 
+                    to={to} 
+                    className="text-gray-300 hover:text-white transition-colors"
+                    onClick={handleNavigation}
+                  >
                     {name}
                   </NavLink>
                 </li>
@@ -66,12 +80,15 @@ const Footer = () => {
               {[
                 { name: "About Us", to: "/about" },
                 { name: "Case Studies", to: "/case-studies" },
-                // { name: "Blog", to: "/blog" },
                 { name: "Careers", to: "/careers" },
                 { name: "Contact Us", to: "/contact" },
               ].map(({ name, to }) => (
                 <li key={name}>
-                  <NavLink to={to} className="text-gray-300 hover:text-white transition-colors">
+                  <NavLink 
+                    to={to} 
+                    className="text-gray-300 hover:text-white transition-colors"
+                    onClick={handleNavigation}
+                  >
                     {name}
                   </NavLink>
                 </li>
@@ -97,7 +114,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="text-crimson-400" size={18} />
-                <a href="mailto:info@crimsonnexus.com" className="hover:text-white transition-colors">
+                <a href="mailto:info@zedentech.com" className="hover:text-white transition-colors">
                 info@zedentech.com
                 </a>
               </li>
@@ -111,13 +128,25 @@ const Footer = () => {
             © {new Date().getFullYear()} ZedEnTech Solutions Pvt Ltd. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-6 text-sm">
-            <NavLink to="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">
+            <NavLink 
+              to="/privacy-policy" 
+              className="text-gray-400 hover:text-white transition-colors"
+              onClick={handleNavigation}
+            >
               Privacy Policy
             </NavLink>
-            <NavLink to="/terms-of-service" className="text-gray-400 hover:text-white transition-colors">
+            <NavLink 
+              to="/terms-of-service" 
+              className="text-gray-400 hover:text-white transition-colors"
+              onClick={handleNavigation}
+            >
               Terms of Service
             </NavLink>
-            <NavLink to="/sitemap" className="text-gray-400 hover:text-white transition-colors">
+            <NavLink 
+              to="/sitemap" 
+              className="text-gray-400 hover:text-white transition-colors"
+              onClick={handleNavigation}
+            >
               Sitemap
             </NavLink>
           </div>
