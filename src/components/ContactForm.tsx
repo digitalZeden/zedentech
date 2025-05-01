@@ -49,56 +49,16 @@ const ContactForm = () => {
     },
   });
 
-  async function onSubmit(values: FormValues) {
-    setIsSubmitting(true);
-    
-    try {
-      const formData = new FormData();
-      formData.append("form-name", "contact");
-      Object.entries(values).forEach(([key, value]) => {
-        formData.append(key, value);
-      });
-
-      const response = await fetch("/", {
-        method: "POST",
-        body: formData
-      });
-
-      if (response.ok) {
-        toast({
-          title: "Message sent successfully!",
-          description: "We'll get back to you as soon as possible.",
-          className: "bg-green-50 border-green-200",
-        });
-        form.reset();
-      } else {
-        throw new Error('Failed to send message');
-      }
-    } catch (error) {
-      toast({
-        title: "Error sending message",
-        description: "Please try again later.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  }
-
   return (
     <Form {...form}>
       <form 
         name="contact"
         method="POST"
         data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        onSubmit={form.handleSubmit(onSubmit)} 
+        onSubmit={form.handleSubmit(() => setIsSubmitting(true))}
         className="space-y-8 bg-white dark:bg-navy-800 p-6 rounded-xl shadow-lg"
       >
         <input type="hidden" name="form-name" value="contact" />
-        <div hidden>
-          <input name="bot-field" />
-        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <FormField
@@ -114,6 +74,7 @@ const ContactForm = () => {
                   <Input 
                     placeholder="Your name" 
                     {...field} 
+                    name="name"
                     className="bg-slate-50 dark:bg-navy-900 border-slate-200 dark:border-navy-600 focus:ring-2 focus:ring-crimson-500"
                   />
                 </FormControl>
@@ -122,6 +83,8 @@ const ContactForm = () => {
             )}
           />
           
+          {/* Repeat for other fields, adding the name attribute to each Input/Textarea */}
+          {/* For email field */}
           <FormField
             control={form.control}
             name="email"
@@ -135,6 +98,8 @@ const ContactForm = () => {
                   <Input 
                     placeholder="Your email" 
                     {...field} 
+                    name="email"
+                    type="email"
                     className="bg-slate-50 dark:bg-navy-900 border-slate-200 dark:border-navy-600 focus:ring-2 focus:ring-crimson-500"
                   />
                 </FormControl>

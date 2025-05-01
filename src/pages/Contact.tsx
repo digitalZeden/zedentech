@@ -46,9 +46,9 @@ const Contact = () => {
                     title: "Our Headquarters",
                     content: (
                       <>
-                        123 Tech Boulevard<br />
-                        Silicon Valley, CA 94025<br />
-                        United States
+                        WeWork Prestige Atlanta, <br/>
+                        80 Feet Main Road, Koramangala, 1A Block, <br/>
+                        ​Bangalore-560034, Karnataka, India
                       </>
                     )
                   },
@@ -57,11 +57,11 @@ const Contact = () => {
                     title: "Phone",
                     content: (
                       <>
-                        <a href="tel:+11234567890" className="hover:text-crimson-500 transition-colors block">
-                          Main: +1 (123) 456-7890
+                        <a href="tel:+919980520112" className="hover:text-crimson-500 transition-colors block">
+                          Main: +91 9980520112
                         </a>
-                        <a href="tel:+18001234567" className="hover:text-crimson-500 transition-colors block mt-1">
-                          Support: +1 (800) 123-4567
+                        <a href="tel:+9199805 20112" className="hover:text-crimson-500 transition-colors block mt-1">
+                          Support: +91 9980520112
                         </a>
                       </>
                     )
@@ -71,14 +71,14 @@ const Contact = () => {
                     title: "Email",
                     content: (
                       <>
-                        <a href="mailto:info@crimsonnexus.com" className="hover:text-crimson-500 transition-colors block">
-                          info@crimsonnexus.com
+                        <a href="mailto:info@zedentech.com" className="hover:text-crimson-500 transition-colors block">
+                          info@zedentech.com
                         </a>
-                        <a href="mailto:sales@crimsonnexus.com" className="hover:text-crimson-500 transition-colors block mt-1">
-                          sales@crimsonnexus.com
+                        <a href="mailto:sales@com" className="hover:text-crimson-500 transition-colors block mt-1">
+                          sales@zedentech.com
                         </a>
-                        <a href="mailto:support@crimsonnexus.com" className="hover:text-crimson-500 transition-colors block mt-1">
-                          support@crimsonnexus.com
+                        <a href="mailto:support@zedentech.com" className="hover:text-crimson-500 transition-colors block mt-1">
+                          support@zedentech.com
                         </a>
                       </>
                     )
@@ -104,7 +104,7 @@ const Contact = () => {
               <div className="bg-white dark:bg-navy-700/50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-navy-600 mb-8">
                 <h3 className="font-bold text-xl mb-6 flex items-center gap-2">
                   <Clock className="h-5 w-5 text-crimson-500" />
-
+crimsonnexus.
                   Business Hours
                 </h3>
                 <div className="space-y-4">
