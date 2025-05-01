@@ -53,13 +53,15 @@ const ContactForm = () => {
     setIsSubmitting(true);
     
     try {
+      const formData = new FormData();
+      formData.append("form-name", "contact");
+      Object.entries(values).forEach(([key, value]) => {
+        formData.append(key, value);
+      });
+
       const response = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({
-          "form-name": "contact",
-          ...values
-        }).toString()
+        body: formData
       });
 
       if (response.ok) {
