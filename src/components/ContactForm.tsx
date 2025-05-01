@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Mail, Phone, Building2, User, MessageSquare } from "lucide-react";
+import { Mail, Phone, Building2, User, MessageSquare, Loader2 } from "lucide-react";
 
 import {
   Form,
@@ -16,7 +16,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 
 const formSchema = z.object({
@@ -38,7 +37,6 @@ type FormValues = z.infer<typeof formSchema>;
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  const formspreeEndpoint = "https://formspree.io/f/xnndqywz"; // Replace with your endpoint
   
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -55,13 +53,13 @@ const ContactForm = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch(formspreeEndpoint, {
-        method: 'POST',
-        body: JSON.stringify(values),
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          "form-name": "contact",
+          ...values
+        }).toString()
       });
 
       if (response.ok) {
@@ -87,7 +85,19 @@ const ContactForm = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 bg-white dark:bg-navy-800 p-6 rounded-xl shadow-lg">
+      <form 
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        onSubmit={form.handleSubmit(onSubmit)} 
+        className="space-y-8 bg-white dark:bg-navy-800 p-6 rounded-xl shadow-lg"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <div hidden>
+          <input name="bot-field" />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <FormField
             control={form.control}
