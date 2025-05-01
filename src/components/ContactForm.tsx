@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Mail, Phone, Building2, User, MessageSquare } from "lucide-react";
+import { useState } from "react";
 
 import {
   Form,
@@ -26,6 +27,7 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 const ContactForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -37,6 +39,35 @@ const ContactForm = () => {
     },
   });
 
+  const onSubmit = async (data: FormValues) => {
+    setIsSubmitting(true);
+    try {
+      const formData = new FormData();
+      Object.entries(data).forEach(([key, value]) => {
+        formData.append(key, value || '');
+      });
+
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(formData as any).toString(),
+      });
+
+      if (response.ok) {
+        form.reset();
+        alert('Thank you for your message. We will get back to you soon!');
+      } else {
+        throw new Error();
+      }
+    } catch (error) {
+      alert('Something went wrong. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <Form {...form}>
       <form
@@ -44,6 +75,7 @@ const ContactForm = () => {
         method="POST"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
+        onSubmit={form.handleSubmit(onSubmit)}
         className="space-y-8 bg-white dark:bg-navy-800 p-6 rounded-xl shadow-lg"
       >
         {/* Required for Netlify */}
@@ -174,10 +206,20 @@ const ContactForm = () => {
 
         <Button
           type="submit"
-          className="w-full md:w-auto bg-[#0F223D] hover:bg-[#1a3660] text-white px-8 py-2 rounded-lg transition-all duration-200"
+          className="w-full md:w-auto bg-[#0F223D] hover:bg-[#1a3660] text-white px-8 py-2 rounded-lg transition-all duration-200 flex items-center justify-center gap-2"
+          disabled={isSubmitting}
         >
-          <Mail className="h-4 w-4 mr-2" />
-          Send Message
+          {isSubmitting ? (
+            <>
+              <span className="animate-spin">⏳</span>
+              Sending...
+            </>
+          ) : (
+            <>
+              <Mail className="h-4 w-4" />
+              Send Message
+            </>
+          )}
         </Button>
       </form>
     </Form>
