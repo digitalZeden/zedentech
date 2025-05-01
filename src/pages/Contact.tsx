@@ -104,8 +104,7 @@ const Contact = () => {
               <div className="bg-white dark:bg-navy-700/50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-navy-600 mb-8">
                 <h3 className="font-bold text-xl mb-6 flex items-center gap-2">
                   <Clock className="h-5 w-5 text-crimson-500" />
-crimsonnexus.
-                  Business Hours
+                  ZedEnTech Business Hours
                 </h3>
                 <div className="space-y-4">
                   {[

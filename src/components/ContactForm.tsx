@@ -1,9 +1,7 @@
-
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Mail, Phone, Building2, User, MessageSquare, Loader2 } from "lucide-react";
+import { Mail, Phone, Building2, User, MessageSquare } from "lucide-react";
 
 import {
   Form,
@@ -16,28 +14,18 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { useToast } from "@/components/ui/use-toast";
 
 const formSchema = z.object({
-  name: z.string().min(2, {
-    message: "Name must be at least 2 characters.",
-  }),
-  email: z.string().email({
-    message: "Please enter a valid email address.",
-  }),
+  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  email: z.string().email({ message: "Please enter a valid email address." }),
   company: z.string().optional(),
   phone: z.string().optional(),
-  message: z.string().min(5, {
-    message: "Message must be at least 5 characters.",
-  }),
+  message: z.string().min(5, { message: "Message must be at least 5 characters." }),
 });
 
 type FormValues = z.infer<typeof formSchema>;
 
 const ContactForm = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-  
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -49,51 +37,24 @@ const ContactForm = () => {
     },
   });
 
-  const handleSubmit = async (data: FormValues) => {
-    setIsSubmitting(true);
-    try {
-      const formData = new FormData();
-      Object.entries(data).forEach(([key, value]) => {
-        formData.append(key, value || ''); // Handle optional fields
-      });
-
-      const response = await fetch('', {
-        method: 'POST',
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as any).toString()
-      });
-
-      if (response.ok) {
-        toast({
-          title: 'Success!',
-          description: 'Your message has been sent successfully.',
-        });
-        form.reset();
-      } else {
-        throw new Error('Form submission failed');
-      }
-    } catch (error) {
-      toast({
-        title: 'Error',
-        description: 'Failed to send message. Please try again.',
-        variant: 'destructive',
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <Form {...form}>
-      <form 
+      <form
         name="contact"
         method="POST"
-        action="/"
         data-netlify="true"
-        onSubmit={form.handleSubmit(handleSubmit)}
+        data-netlify-honeypot="bot-field"
         className="space-y-8 bg-white dark:bg-navy-800 p-6 rounded-xl shadow-lg"
       >
+        {/* Required for Netlify */}
         <input type="hidden" name="form-name" value="contact" />
+
+        {/* Honeypot Field */}
+        <p hidden>
+          <label>
+            Don’t fill this out: <input name="bot-field" />
+          </label>
+        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <FormField
@@ -106,20 +67,19 @@ const ContactForm = () => {
                   Name *
                 </FormLabel>
                 <FormControl>
-                  <Input 
-                    placeholder="Your name" 
-                    {...field} 
+                  <Input
+                    placeholder="Your name"
+                    {...field}
                     name="name"
-                    className="bg-slate-50 dark:bg-navy-900 border-slate-200 dark:border-navy-600 focus:ring-2 focus:ring-crimson-500"
+                    required
+                    className="bg-slate-50 dark:bg-navy-900 border-slate-200 dark:border-navy-600"
                   />
                 </FormControl>
-                <FormMessage className="text-sm" />
+                <FormMessage />
               </FormItem>
             )}
           />
-          
-          {/* Repeat for other fields, adding the name attribute to each Input/Textarea */}
-          {/* For email field */}
+
           <FormField
             control={form.control}
             name="email"
@@ -130,19 +90,20 @@ const ContactForm = () => {
                   Email *
                 </FormLabel>
                 <FormControl>
-                  <Input 
-                    placeholder="Your email" 
-                    {...field} 
+                  <Input
+                    placeholder="Your email"
+                    {...field}
                     name="email"
                     type="email"
-                    className="bg-slate-50 dark:bg-navy-900 border-slate-200 dark:border-navy-600 focus:ring-2 focus:ring-crimson-500"
+                    required
+                    className="bg-slate-50 dark:bg-navy-900 border-slate-200 dark:border-navy-600"
                   />
                 </FormControl>
-                <FormMessage className="text-sm" />
+                <FormMessage />
               </FormItem>
             )}
           />
-          
+
           <FormField
             control={form.control}
             name="company"
@@ -153,17 +114,18 @@ const ContactForm = () => {
                   Company
                 </FormLabel>
                 <FormControl>
-                  <Input 
-                    placeholder="Your company" 
-                    {...field} 
-                    className="bg-slate-50 dark:bg-navy-900 border-slate-200 dark:border-navy-600 focus:ring-2 focus:ring-crimson-500"
+                  <Input
+                    placeholder="Your company"
+                    {...field}
+                    name="company"
+                    className="bg-slate-50 dark:bg-navy-900 border-slate-200 dark:border-navy-600"
                   />
                 </FormControl>
-                <FormMessage className="text-sm" />
+                <FormMessage />
               </FormItem>
             )}
           />
-          
+
           <FormField
             control={form.control}
             name="phone"
@@ -174,18 +136,19 @@ const ContactForm = () => {
                   Phone Number
                 </FormLabel>
                 <FormControl>
-                  <Input 
-                    placeholder="Your phone number" 
-                    {...field} 
-                    className="bg-slate-50 dark:bg-navy-900 border-slate-200 dark:border-navy-600 focus:ring-2 focus:ring-crimson-500"
+                  <Input
+                    placeholder="Your phone number"
+                    {...field}
+                    name="phone"
+                    className="bg-slate-50 dark:bg-navy-900 border-slate-200 dark:border-navy-600"
                   />
                 </FormControl>
-                <FormMessage className="text-sm" />
+                <FormMessage />
               </FormItem>
             )}
           />
         </div>
-        
+
         <FormField
           control={form.control}
           name="message"
@@ -196,33 +159,25 @@ const ContactForm = () => {
                 Message *
               </FormLabel>
               <FormControl>
-                <Textarea 
+                <Textarea
                   placeholder="How can we help you?"
-                  className="min-h-32 bg-slate-50 dark:bg-navy-900 border-slate-200 dark:border-navy-600 focus:ring-2 focus:ring-crimson-500 resize-none"
-                  {...field} 
+                  {...field}
+                  name="message"
+                  required
+                  className="min-h-32 bg-slate-50 dark:bg-navy-900 border-slate-200 dark:border-navy-600 resize-none"
                 />
               </FormControl>
-              <FormMessage className="text-sm" />
+              <FormMessage />
             </FormItem>
           )}
         />
-        
-        <Button 
-          type="submit" 
-          className="w-full md:w-auto bg-[#0F223D] hover:bg-[#1a3660] text-white px-8 py-2 rounded-lg transition-all duration-200 flex items-center justify-center gap-2" 
-          disabled={isSubmitting}
+
+        <Button
+          type="submit"
+          className="w-full md:w-auto bg-[#0F223D] hover:bg-[#1a3660] text-white px-8 py-2 rounded-lg transition-all duration-200"
         >
-          {isSubmitting ? (
-            <>
-              <Loader2 className="h-4 w-4 animate-spin" />
-              Sending...
-            </>
-          ) : (
-            <>
-              <Mail className="h-4 w-4" />
-              Send Message
-            </>
-          )}
+          <Mail className="h-4 w-4 mr-2" />
+          Send Message
         </Button>
       </form>
     </Form>
