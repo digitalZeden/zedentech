@@ -44,29 +44,31 @@ const ContactForm = () => {
   });
 
   const onSubmit = async (data: FormValues) => {
-    setIsSubmitting(true);
     try {
-      const formData = {
-        'form-name': 'contact',
-        'subject': 'New Contact Form Submission',
-        ...data
-      };
+      setIsSubmitting(true);
+      
+      // Create a native form submission
+      const formElement = document.createElement('form');
+      formElement.method = 'POST';
+      formElement.setAttribute('data-netlify', 'true');
+      formElement.name = 'contact';
 
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Accept': 'application/json'
-        },
-        body: encode(formData)
+      // Add all form fields
+      Object.entries({ 'form-name': 'contact', ...data }).forEach(([key, value]) => {
+        const input = document.createElement('input');
+        input.name = key;
+        input.value = value?.toString() || '';
+        formElement.appendChild(input);
       });
 
-      if (response.ok) {
-        form.reset();
-        alert('Thank you for your message. We\'ll get back to you soon!');
-      } else {
-        throw new Error('Form submission failed');
-      }
+      // Submit the form
+      document.body.appendChild(formElement);
+      formElement.submit();
+      document.body.removeChild(formElement);
+
+      // Reset form and show success message
+      form.reset();
+      alert('Thank you for your message. We\'ll get back to you soon!');
     } catch (error) {
       console.error('Form submission error:', error);
       alert('Something went wrong. Please try again.');
@@ -80,13 +82,11 @@ const ContactForm = () => {
       <form
         name="contact"
         method="POST"
-        action="/contact?success=true"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         onSubmit={form.handleSubmit(onSubmit)}
         className="space-y-8 bg-white dark:bg-navy-800 p-6 rounded-xl shadow-lg"
       >
-        {/* Hidden inputs for Netlify */}
         <input type="hidden" name="form-name" value="contact" />
         <input type="hidden" name="subject" value="New Contact Form Submission" />
         <p hidden>
