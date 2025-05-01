@@ -57,9 +57,9 @@ const ContactForm = () => {
         formData.append(key, value || ''); // Handle optional fields
       });
 
-      const response = await fetch('/', {
+      const response = await fetch('', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData as any).toString()
       });
 
@@ -88,6 +88,7 @@ const ContactForm = () => {
       <form 
         name="contact"
         method="POST"
+        action="/"
         data-netlify="true"
         onSubmit={form.handleSubmit(handleSubmit)}
         className="space-y-8 bg-white dark:bg-navy-800 p-6 rounded-xl shadow-lg"
