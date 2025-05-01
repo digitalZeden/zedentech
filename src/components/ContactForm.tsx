@@ -49,13 +49,47 @@ const ContactForm = () => {
     },
   });
 
+  const handleSubmit = async (data: FormValues) => {
+    setIsSubmitting(true);
+    try {
+      const formData = new FormData();
+      Object.entries(data).forEach(([key, value]) => {
+        formData.append(key, value || ''); // Handle optional fields
+      });
+
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData as any).toString()
+      });
+
+      if (response.ok) {
+        toast({
+          title: 'Success!',
+          description: 'Your message has been sent successfully.',
+        });
+        form.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      toast({
+        title: 'Error',
+        description: 'Failed to send message. Please try again.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <Form {...form}>
       <form 
         name="contact"
         method="POST"
         data-netlify="true"
-        onSubmit={form.handleSubmit(() => setIsSubmitting(true))}
+        onSubmit={form.handleSubmit(handleSubmit)}
         className="space-y-8 bg-white dark:bg-navy-800 p-6 rounded-xl shadow-lg"
       >
         <input type="hidden" name="form-name" value="contact" />
