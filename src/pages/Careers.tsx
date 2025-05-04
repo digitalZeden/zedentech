@@ -24,24 +24,24 @@ import {
 import JobApplicationDialog from "@/components/JobApplicationDialog";
 
 const jobOpenings = [
-  {
-    title: "Senior Cloud Architect",
-    department: "Engineering",
-    location: "Silicon Valley, CA",
-    type: "Full-time",
-    remote: true,
-    posted: "2 weeks ago",
-    id: "cloud-architect-2025"
-  },
-  {
-    title: "Cybersecurity Analyst",
-    department: "Security",
-    location: "New York, NY",
-    type: "Full-time",
-    remote: true,
-    posted: "1 week ago",
-    id: "cybersecurity-analyst-2025"
-  },
+  // {
+  //   title: "Senior Cloud Architect",
+  //   department: "Engineering",
+  //   location: "Silicon Valley, CA",
+  //   type: "Full-time",
+  //   remote: true,
+  //   posted: "2 weeks ago",
+  //   id: "cloud-architect-2025"
+  // },
+  // {
+  //   title: "Cybersecurity Analyst",
+  //   department: "Security",
+  //   location: "New York, NY",
+  //   type: "Full-time",
+  //   remote: true,
+  //   posted: "1 week ago",
+  //   id: "cybersecurity-analyst-2025"
+  // },
   {
     title: "Full Stack Developer",
     department: "Engineering",
@@ -51,51 +51,51 @@ const jobOpenings = [
     posted: "3 days ago",
     id: "fullstack-developer-2025"
   },
-  {
-    title: "Data Scientist",
-    department: "Data Analytics",
-    location: "London, UK",
-    type: "Full-time",
-    remote: true,
-    posted: "5 days ago",
-    id: "data-scientist-2025"
-  },
-  {
-    title: "IT Project Manager",
-    department: "Operations",
-    location: "Singapore",
-    type: "Full-time",
-    remote: false,
-    posted: "1 week ago",
-    id: "project-manager-2025"
-  },
-  {
-    title: "UX/UI Designer",
-    department: "Design",
-    location: "Remote",
-    type: "Full-time",
-    remote: true,
-    posted: "2 days ago",
-    id: "ux-designer-2025"
-  },
-  {
-    title: "DevOps Engineer",
-    department: "Engineering",
-    location: "Silicon Valley, CA",
-    type: "Full-time",
-    remote: true,
-    posted: "1 week ago",
-    id: "devops-engineer-2025"
-  },
-  {
-    title: "Marketing Specialist",
-    department: "Marketing",
-    location: "New York, NY",
-    type: "Full-time",
-    remote: false,
-    posted: "2 weeks ago",
-    id: "marketing-specialist-2025"
-  }
+  // {
+  //   title: "Data Scientist",
+  //   department: "Data Analytics",
+  //   location: "London, UK",
+  //   type: "Full-time",
+  //   remote: true,
+  //   posted: "5 days ago",
+  //   id: "data-scientist-2025"
+  // },
+  // {
+  //   title: "IT Project Manager",
+  //   department: "Operations",
+  //   location: "Singapore",
+  //   type: "Full-time",
+  //   remote: false,
+  //   posted: "1 week ago",
+  //   id: "project-manager-2025"
+  // },
+  // {
+  //   title: "UX/UI Designer",
+  //   department: "Design",
+  //   location: "Remote",
+  //   type: "Full-time",
+  //   remote: true,
+  //   posted: "2 days ago",
+  //   id: "ux-designer-2025"
+  // },
+  // {
+  //   title: "DevOps Engineer",
+  //   department: "Engineering",
+  //   location: "Silicon Valley, CA",
+  //   type: "Full-time",
+  //   remote: true,
+  //   posted: "1 week ago",
+  //   id: "devops-engineer-2025"
+  // },
+  // {
+  //   title: "Marketing Specialist",
+  //   department: "Marketing",
+  //   location: "New York, NY",
+  //   type: "Full-time",
+  //   remote: false,
+  //   posted: "2 weeks ago",
+  //   id: "marketing-specialist-2025"
+  // }
 ];
 
 const departments = [

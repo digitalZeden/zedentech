@@ -127,7 +127,7 @@ const Footer = () => {
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
             © {new Date().getFullYear()} ZedEnTech Solutions Pvt Ltd. All rights reserved.
           </p>
-          <div className="flex flex-wrap gap-6 text-sm">
+          {/* <div className="flex flex-wrap gap-6 text-sm">
             <NavLink 
               to="/privacy-policy" 
               className="text-gray-400 hover:text-white transition-colors"
@@ -149,7 +149,7 @@ const Footer = () => {
             >
               Sitemap
             </NavLink>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

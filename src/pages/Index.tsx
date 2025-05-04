@@ -56,9 +56,9 @@ const services = [
 
 const caseStudies = [
   {
-    title: "Digital Transformation for Global Financial Institution",
-    client: "Major Bank",
-    industry: "Finance",
+    title: "Digital Transformation for Ed-Tech Company",
+    client: "Millionaire’s Academy",
+    industry: "Academy",
     excerpt: "Implemented a comprehensive digital transformation strategy, modernizing legacy systems and introducing cloud solutions that improved operational efficiency by 35%.",
     imageUrl: "https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?ixlib=rb-4.0.3",
     slug: "financial-digital-transformation",
@@ -66,7 +66,7 @@ const caseStudies = [
   },
   {
     title: "Healthcare Provider Security Enhancement",
-    client: "National Healthcare Group",
+    client: "Arrazi Clinics",
     industry: "Healthcare",
     excerpt: "Developed and implemented an advanced cybersecurity framework that protected patient data and ensured HIPAA compliance while improving system performance.",
     imageUrl: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3",
@@ -75,7 +75,7 @@ const caseStudies = [
   },
   {
     title: "Smart Manufacturing IoT Implementation",
-    client: "Global Manufacturing Corp",
+    client: "Precision Valves Services",
     industry: "Manufacturing",
     excerpt: "Designed and deployed an IoT solution connecting over 500 manufacturing devices, resulting in 28% reduced downtime and real-time production monitoring.",
     imageUrl: "https://images.unsplash.com/photo-1553406830-f6e44ac97624?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -166,11 +166,11 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold mb-2 text-crimson-400">5+</div>
+              <div className="text-4xl font-bold mb-2 text-crimson-400">15+</div>
               <div className="text-gray-300">Years Experience</div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2 text-crimson-400">20+</div>
+              <div className="text-4xl font-bold mb-2 text-crimson-400">500+</div>
               <div className="text-gray-300">Clients Worldwide</div>
             </div>
             <div>
@@ -178,7 +178,7 @@ const Home = () => {
               <div className="text-gray-300">Client Satisfaction</div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2 text-crimson-400">40+</div>
+              <div className="text-4xl font-bold mb-2 text-crimson-400">200+</div>
               <div className="text-gray-300">IT Professionals</div>
             </div>
           </div>
@@ -286,21 +286,21 @@ const Home = () => {
       {/* Testimonials Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
+          {/* <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Client Testimonials</h2>
             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
               Hear what our clients have to say about working with ZedEnTech Solutions.
             </p>
-          </div>
+          </div> */}
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <TestimonialCard 
                 key={index}
                 {...testimonial}
               />
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
       

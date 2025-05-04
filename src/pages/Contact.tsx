@@ -60,9 +60,9 @@ const Contact = () => {
                         <a href="tel:+919980520112" className="hover:text-crimson-500 transition-colors block">
                           Main: +91 9980520112
                         </a>
-                        <a href="tel:+9199805 20112" className="hover:text-crimson-500 transition-colors block mt-1">
+                        {/* <a href="tel:+9199805 20112" className="hover:text-crimson-500 transition-colors block mt-1">
                           Support: +91 9980520112
-                        </a>
+                        </a> */}
                       </>
                     )
                   },
@@ -77,9 +77,9 @@ const Contact = () => {
                         <a href="mailto:sales@com" className="hover:text-crimson-500 transition-colors block mt-1">
                           sales@zedentech.com
                         </a>
-                        <a href="mailto:support@zedentech.com" className="hover:text-crimson-500 transition-colors block mt-1">
+                        {/* <a href="mailto:support@zedentech.com" className="hover:text-crimson-500 transition-colors block mt-1">
                           support@zedentech.com
-                        </a>
+                        </a> */}
                       </>
                     )
                   }

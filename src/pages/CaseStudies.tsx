@@ -79,9 +79,9 @@ const caseStudies = [
     tags: ["DevOps", "Automation", "Software Development"]
   },
   {
-    title: "Mobile Banking Application Development",
-    client: "Regional Credit Union",
-    industry: "Finance",
+    title: "Mobile Application Development",
+    client: "Precision Scienticfic Equipment",
+    industry: "Manufactuirng",
     excerpt: "Developed a secure, feature-rich mobile banking application that increased digital engagement by 45% and enabled new customer acquisition channels.",
     imageUrl: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3",
     slug: "credit-union-mobile-banking",
@@ -243,8 +243,8 @@ const CaseStudies = () => {
             <div className="flex justify-center items-center">
               <div className="w-16 h-16 rounded-full bg-gray-500 mr-4"></div>
               <div className="text-left">
-                <div className="font-bold text-lg">Robert Johnson</div>
-                <div className="text-gray-300">CTO, Major Bank</div>
+                <div className="font-bold text-lg">Abdul Razzaq</div>
+                <div className="text-gray-300">CEO Millionaire’s Academy</div>
               </div>
             </div>
           </div>

@@ -38,8 +38,8 @@ const About = () => {
                 Through the years, we've stayed true to our core values of innovation, excellence, and customer focus, adapting to the evolving technology landscape while maintaining our commitment to delivering exceptional results for our clients.
               </p>
               <p className="text-lg text-slate-600 dark:text-slate-300">
-                Today, with offices across North America, Europe, and Asia, and a team of over 200 IT professionals, we continue to drive digital transformation and empower businesses to thrive in the digital age.
-              </p>
+              Today, we have extend our services in UAE, Saudi Arabia & Canada and a team of over 200 IT professionals, 
+              we continue to drive digital transformation and empower businesses to thrive in the digital age.              </p>
             </div>
             
             <div className="relative">
@@ -276,7 +276,7 @@ const About = () => {
                   <div>
                     <h3 className="font-bold text-lg">Years in Business</h3>
                     <p className="text-slate-600 dark:text-slate-300">
-                      Established in 2008, with a proven track record of success.
+                      Established in 2020, with a proven track record of success.
                     </p>
                   </div>
                 </div>
