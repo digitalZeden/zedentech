@@ -16,23 +16,23 @@ const services = [
     category: "cloud",
     items: [
       {
-        title: "Cloud Migration",
+        title: "IT Consulting",
         description: "Seamlessly migrate your existing infrastructure to the cloud with our proven methodology that minimizes disruption and optimizes performance.",
-        icon: <Cloud className="h-6 w-6" />,
+        icon: <Headphones className="h-6 w-6" />, // Changed to Headphones for consulting
         link: "/services/cloud/migration",
         imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3"
       },
       {
-        title: "Cloud Infrastructure",
+        title: "IT Professional Services",
         description: "Build scalable, resilient cloud infrastructure designed for your specific business requirements and performance needs.",
-        icon: <Server className="h-6 w-6" />,
+        icon: <Users className="h-6 w-6" />, // Changed to Users for professional services
         link: "/services/cloud/infrastructure",
         imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3"
       },
       {
-        title: "Multi-Cloud Strategy",
+        title: "IT Infrastruresture",
         description: "Develop and implement a strategic multi-cloud approach that leverages the best capabilities of different cloud providers.",
-        icon: <Globe className="h-6 w-6" />,
+        icon: <Server className="h-6 w-6" />, // Changed to Server for infrastructure
         link: "/services/cloud/multi-cloud",
         imageUrl: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3"
       }
@@ -42,23 +42,23 @@ const services = [
     category: "cybersecurity",
     items: [
       {
-        title: "Security Assessment",
+        title: "Cloud Migration",
         description: "Comprehensive evaluation of your security posture to identify vulnerabilities and provide actionable recommendations.",
-        icon: <Shield className="h-6 w-6" />,
+        icon: <Cloud className="h-6 w-6" />, // Changed to Cloud for cloud migration
         link: "/services/cybersecurity/assessment",
         imageUrl: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3"
       },
       {
-        title: "Threat Protection",
+        title: "Cyber Security Assesment",
         description: "Advanced threat detection and response solutions that proactively protect your systems from emerging cybersecurity threats.",
-        icon: <Lock className="h-6 w-6" />,
+        icon: <Shield className="h-6 w-6" />, // Changed to Shield for security
         link: "/services/cybersecurity/protection",
         imageUrl: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3"
       },
       {
-        title: "Compliance & Governance",
+        title: "Risk & Compilance Services",
         description: "Ensure your organization meets regulatory requirements with our comprehensive compliance and governance programs.",
-        icon: <FileCheck className="h-6 w-6" />,
+        icon: <FileCheck className="h-6 w-6" />, // Kept FileCheck as it's appropriate
         link: "/services/cybersecurity/compliance",
         imageUrl: "https://images.unsplash.com/photo-1509822929063-6b6cfc9b42f2?ixlib=rb-4.0.3"
       }
@@ -68,21 +68,21 @@ const services = [
     category: "software",
     items: [
       {
-        title: "Custom Software Development",
+        title: "Application Development",
         description: "Tailor-made software solutions designed to address your unique business challenges and provide competitive advantages.",
         icon: <Code className="h-6 w-6" />,
         link: "/services/software/custom",
         imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3"
       },
       {
-        title: "Mobile Applications",
+        title: "Mobile App Development",
         description: "Native and cross-platform mobile applications that deliver exceptional user experiences across all devices.",
         icon: <Smartphone className="h-6 w-6" />,
         link: "/services/software/mobile",
         imageUrl: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3"
       },
       {
-        title: "API Development",
+        title: "User Experience Services",
         description: "Robust and scalable API solutions that enable seamless integration between systems and applications.",
         icon: <Share2 className="h-6 w-6" />,
         link: "/services/software/api",
@@ -101,7 +101,7 @@ const services = [
         imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3"
       },
       {
-        title: "AI Solutions",
+        title: "Data Visulization",
         description: "Leverage the power of artificial intelligence to automate processes and uncover new business opportunities.",
         icon: <Brain className="h-6 w-6" />,
         link: "/services/data/ai",
@@ -120,21 +120,21 @@ const services = [
     category: "managed",
     items: [
       {
-        title: "IT Infrastructure Management",
+        title: "AI/ML Solution",
         description: "End-to-end management of your IT infrastructure ensuring optimal performance and reliability.",
         icon: <Server className="h-6 w-6" />,
         link: "/services/managed/infrastructure",
         imageUrl: "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3"
       },
       {
-        title: "24/7 Monitoring",
+        title: "Salesforce Consulting",
         description: "Round-the-clock monitoring and support to ensure your systems are always running smoothly.",
         icon: <Clock className="h-6 w-6" />,
         link: "/services/managed/monitoring",
         imageUrl: "https://images.unsplash.com/photo-1531973576160-7125cd663d86?ixlib=rb-4.0.3"
       },
       {
-        title: "Help Desk Support",
+        title: "Business Workflow Solutions ",
         description: "Dedicated help desk support providing quick resolution to technical issues and user queries.",
         icon: <Headphones className="h-6 w-6" />,
         link: "/services/managed/helpdesk",
@@ -213,17 +213,17 @@ const Services = () => {
             
             <div className="relative p-8 bg-white dark:bg-navy-700 rounded-xl shadow-md text-center">
               <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-crimson-500 text-white flex items-center justify-center text-xl font-bold">3</div>
-              <h3 className="text-xl font-bold mt-6 mb-4">Implement</h3>
+              <h3 className="text-xl font-bold mt-6 mb-4">Develop</h3>
               <p className="text-slate-600 dark:text-slate-300">
-                Our expert team implements the solution with precision, ensuring minimal disruption to your operations.
+                Our development team brings your solution to life using cutting-edge technologies and best practices in software engineering.
               </p>
             </div>
             
             <div className="relative p-8 bg-white dark:bg-navy-700 rounded-xl shadow-md text-center">
               <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-crimson-500 text-white flex items-center justify-center text-xl font-bold">4</div>
-              <h3 className="text-xl font-bold mt-6 mb-4">Optimize</h3>
+              <h3 className="text-xl font-bold mt-6 mb-4">Deliver</h3>
               <p className="text-slate-600 dark:text-slate-300">
-                We continuously monitor and optimize the solution to ensure it delivers maximum value over time.
+                We ensure smooth deployment, provide comprehensive training, and offer ongoing support to maximize your solution's value.
               </p>
             </div>
           </div>

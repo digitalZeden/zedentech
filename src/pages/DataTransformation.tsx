@@ -30,13 +30,13 @@ const DataTransformation = () => {
                 Data analysis consulting services
               </h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                Leading supplier of data analysis consulting services, Databiz can assist businesses in integrating and deploying BI platforms efficiently and rapidly. Businesses can quickly analyze and evaluate data through interactive reports and captivating visualizations from numerous sources using BI. Businesses can produce, edit, organize, and share reports on any device with the help of the cloud-based suite of business intelligence tools, which gives them a competitive advantage and real-time actionable insights.
+                Leading supplier of data analysis consulting services, ZedEnTech Solutions can assist businesses in integrating and deploying BI platforms efficiently and rapidly. Businesses can quickly analyze and evaluate data through interactive reports and captivating visualizations from numerous sources using BI. Businesses can produce, edit, organize, and share reports on any device with the help of the cloud-based suite of business intelligence tools, which gives them a competitive advantage and real-time actionable insights.
               </p>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                By utilizing Databiz's experience to make the most of this potent technology, organizations may speed their BI installation and achieve greater outcomes with our consulting service.
+                By utilizing ZedEnTech Solutions's experience to make the most of this potent technology, organizations may speed their BI installation and achieve greater outcomes with our consulting service.
               </p>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                Through personalized reports, Databiz's BI solutions may assist companies in realizing the full potential of their data. To empower your team to make defensible decisions based on data insights, we can assist you with integrating BI reports into your company processes. Our team of professionals will collaborate closely with you to determine and comprehend your data requirements and produce reports that are tailored to your company's needs.
+                Through personalized reports, ZedEnTech Solutions's BI solutions may assist companies in realizing the full potential of their data. To empower your team to make defensible decisions based on data insights, we can assist you with integrating BI reports into your company processes. Our team of professionals will collaborate closely with you to determine and comprehend your data requirements and produce reports that are tailored to your company's needs.
               </p>
             </div>
 

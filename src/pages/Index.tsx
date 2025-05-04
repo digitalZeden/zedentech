@@ -1,5 +1,4 @@
-
-import { ArrowRight, BarChart2, Cloud, Code, Database, Lock, PhoneCall, Server, Users, Zap } from "lucide-react";
+import { ArrowRight, BarChart2, Cloud, Code, Database, Headphones, Laptop, Lock, PhoneCall, Server, Smartphone, Users, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import Navbar from "@/components/Navbar";
@@ -12,44 +11,44 @@ import CaseStudyCard from "@/components/CaseStudyCard";
 
 const services = [
   {
-    title: "Cloud Services",
+    title: "IT Consulting",
     description: "Accelerate your digital transformation with our scalable, secure cloud solutions tailored for your business needs.",
-    icon: <Cloud className="h-6 w-6" />,
+    icon: <Headphones className="h-6 w-6" />,
     link: "/services/cloud",
     imageUrl: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3"
   },
   {
-    title: "Cybersecurity",
+    title: "IT Professional Services",
     description: "Protect your business with our comprehensive cybersecurity solutions that safeguard your critical data and systems.",
-    icon: <Lock className="h-6 w-6" />,
+    icon: <Laptop className="h-6 w-6" />,
     link: "/services/cybersecurity",
     imageUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3"
   },
   {
-    title: "Software Development",
+    title: "Application Development",
     description: "Custom software solutions designed to optimize your business processes and create exceptional user experiences.",
     icon: <Code className="h-6 w-6" />,
     link: "/services/software-development",
     imageUrl: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3"
   },
   {
-    title: "IT Consulting",
+    title: "Mobile App Development",
     description: "Strategic IT consulting that aligns technology with your business goals to drive growth and innovation.",
-    icon: <Users className="h-6 w-6" />,
+    icon: <Smartphone className="h-6 w-6" />,
     link: "/services/consulting",
     imageUrl: "https://images.unsplash.com/photo-1537511446984-935f663eb1f4?ixlib=rb-4.0.3"
   },
   {
-    title: "Data Analytics",
+    title: "Data Management",
     description: "Transform your data into actionable insights with our advanced analytics and business intelligence solutions.",
-    icon: <BarChart2 className="h-6 w-6" />,
+    icon: <Database className="h-6 w-6" />,
     link: "/solutions/data-analytics",
     imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3"
   },
   {
-    title: "Managed IT Services",
+    title: "Cloud Migration",
     description: "Comprehensive IT management services that optimize performance, reliability, and security of your infrastructure.",
-    icon: <Server className="h-6 w-6" />,
+    icon: <Cloud className="h-6 w-6" />,
     link: "/services/managed-services",
     imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3"
   }
