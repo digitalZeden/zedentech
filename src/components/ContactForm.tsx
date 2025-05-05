@@ -47,24 +47,21 @@ const ContactForm = () => {
     try {
       setIsSubmitting(true);
       
-      const formData = new FormData();
-      formData.append('form-name', 'contact');
-      Object.entries(data).forEach(([key, value]) => {
-        formData.append(key, value?.toString() || '');
-      });
+      // Create form data with the form-name field
+      const formData = {
+        'form-name': 'contact',
+        ...data
+      };
 
-      const response = await fetch('/', {
+      await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as any).toString()
+        body: encode(formData)
       });
 
-      if (response.ok) {
-        form.reset();
-        alert('Thank you for your message. We\'ll get back to you soon!');
-      } else {
-        throw new Error('Form submission failed');
-      }
+      form.reset();
+      alert('Thank you for your message. We\'ll get back to you soon!');
+      window.location.href = '/'; // Redirect to home page after successful submission
     } catch (error) {
       console.error('Form submission error:', error);
       alert('Something went wrong. Please try again.');
