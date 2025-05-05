@@ -7,6 +7,6 @@
   to = "/index.html"
   status = 200
 
-[forms]
-  [forms.contact]
-    name = "contact"
+[[forms]]
+  name = "contact"
+  notifications = ["email"]
