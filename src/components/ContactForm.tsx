@@ -47,28 +47,24 @@ const ContactForm = () => {
     try {
       setIsSubmitting(true);
       
-      // Create a native form submission
-      const formElement = document.createElement('form');
-      formElement.method = 'POST';
-      formElement.setAttribute('data-netlify', 'true');
-      formElement.name = 'contact';
-
-      // Add all form fields
-      Object.entries({ 'form-name': 'contact', ...data }).forEach(([key, value]) => {
-        const input = document.createElement('input');
-        input.name = key;
-        input.value = value?.toString() || '';
-        formElement.appendChild(input);
+      const formData = new FormData();
+      formData.append('form-name', 'contact');
+      Object.entries(data).forEach(([key, value]) => {
+        formData.append(key, value?.toString() || '');
       });
 
-      // Submit the form
-      document.body.appendChild(formElement);
-      formElement.submit();
-      document.body.removeChild(formElement);
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData as any).toString()
+      });
 
-      // Reset form and show success message
-      form.reset();
-      alert('Thank you for your message. We\'ll get back to you soon!');
+      if (response.ok) {
+        form.reset();
+        alert('Thank you for your message. We\'ll get back to you soon!');
+      } else {
+        throw new Error('Form submission failed');
+      }
     } catch (error) {
       console.error('Form submission error:', error);
       alert('Something went wrong. Please try again.');
