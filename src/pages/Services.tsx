@@ -17,21 +17,21 @@ const services = [
     items: [
       {
         title: "IT Consulting",
-        description: "Seamlessly migrate your existing infrastructure to the cloud with our proven methodology that minimizes disruption and optimizes performance.",
-        icon: <Headphones className="h-6 w-6" />, // Changed to Headphones for consulting
+        description: "Strategic IT Consulting for Business Growth. We analyze your tech needs and deliver tailored solutions—from cloud migration to cybersecurity—to boost efficiency and cut costs.",
+        icon: <Headphones className="h-6 w-6" />,
         link: "/services/cloud/migration",
         imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3"
       },
       {
         title: "IT Professional Services",
-        description: "Build scalable, resilient cloud infrastructure designed for your specific business requirements and performance needs.",
-        icon: <Users className="h-6 w-6" />, // Changed to Users for professional services
+        description: "Expert IT Professional Services Tailored to Your Needs. Our certified team combines deep technical expertise with industry best practices to solve your toughest IT challenges. Let us handle the tech so you can focus on your business.",
+        icon: <Users className="h-6 w-6" />,
         link: "/services/cloud/infrastructure",
         imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3"
       },
       {
         title: "IT Infrastruresture",
-        description: "Develop and implement a strategic multi-cloud approach that leverages the best capabilities of different cloud providers.",
+        description: "Rock-Solid IT Infrastructure for Business Continuity. We design, implement and manage secure, high-performance networks, servers and cloud systems tailored to your operational needs. Our proactive monitoring and enterprise-grade solutions ensure 99.9% uptime and seamless scalability. Let's build the technology foundation that powers your growth.",
         icon: <Server className="h-6 w-6" />, // Changed to Server for infrastructure
         link: "/services/cloud/multi-cloud",
         imageUrl: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3"
@@ -43,21 +43,21 @@ const services = [
     items: [
       {
         title: "Cloud Migration",
-        description: "Comprehensive evaluation of your security posture to identify vulnerabilities and provide actionable recommendations.",
+        description: "Streamline Your Business with Seamless Cloud Migration.Our expert team ensures secure, cost-effective transitions to AWS, Azure, or Google Cloud with minimal downtime. We customize solutions to optimize performance, scalability, and security for your specific workloads. Let's modernize your infrastructure and unlock the full potential of cloud technology.",
         icon: <Cloud className="h-6 w-6" />, // Changed to Cloud for cloud migration
         link: "/services/cybersecurity/assessment",
         imageUrl: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3"
       },
       {
         title: "Cyber Security Assesment",
-        description: "Advanced threat detection and response solutions that proactively protect your systems from emerging cybersecurity threats.",
+        description: "Fortify Your Defenses with Comprehensive Security Assessments We identify vulnerabilities across your networks, systems and applications through rigorous penetration testing and risk analysis. Our actionable reports prioritize threats and provide clear remediation strategies to strengthen your security posture. Protect your business before attackers strike – let's uncover your weak spots together.",
         icon: <Shield className="h-6 w-6" />, // Changed to Shield for security
         link: "/services/cybersecurity/protection",
         imageUrl: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3"
       },
       {
         title: "Risk & Compilance Services",
-        description: "Ensure your organization meets regulatory requirements with our comprehensive compliance and governance programs.",
+        description: "Proactive Risk Management & Compliance Assurance We identify vulnerabilities, mitigate threats and ensure adherence to regulatory standards (GDPR, HIPAA, ISO) through comprehensive audits and tailored frameworks. Our experts translate complex requirements into actionable controls that protect your business while enabling growth. Achieve both security and compliance without compromising operational efficiency.",
         icon: <FileCheck className="h-6 w-6" />, // Kept FileCheck as it's appropriate
         link: "/services/cybersecurity/compliance",
         imageUrl: "https://images.unsplash.com/photo-1509822929063-6b6cfc9b42f2?ixlib=rb-4.0.3"
@@ -69,21 +69,21 @@ const services = [
     items: [
       {
         title: "Application Development",
-        description: "Tailor-made software solutions designed to address your unique business challenges and provide competitive advantages.",
+        description: "Tailored Solutions Through Custom Application Development. We design and build scalable, secure applications perfectly aligned with your unique business processes and goals. Our full-cycle development covers everything from initial concept to deployment and ongoing support. Transform your ideas into powerful digital solutions that drive efficiency and growth.",
         icon: <Code className="h-6 w-6" />,
         link: "/services/software/custom",
         imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3"
       },
       {
         title: "Mobile App Development",
-        description: "Native and cross-platform mobile applications that deliver exceptional user experiences across all devices.",
+        description: "Powerful Mobile Apps Built for Your Business Needs. We develop custom iOS and Android applications with sleek UX, robust functionality, and seamless backend integration. Our agile approach ensures fast delivery of scalable, secure apps tailored to your users and objectives. Let's turn your mobile vision into an engaging digital experience.",
         icon: <Smartphone className="h-6 w-6" />,
         link: "/services/software/mobile",
         imageUrl: "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3"
       },
       {
         title: "User Experience Services",
-        description: "Robust and scalable API solutions that enable seamless integration between systems and applications.",
+        description: "Elevate Engagement with Expert UX Services We craft intuitive, user-centered designs through research, wireframing and prototyping to optimize usability and satisfaction. Our data-driven approach transforms complex workflows into seamless digital experiences that boost conversions and loyalty. Let's design interfaces users love interacting with.",
         icon: <Share2 className="h-6 w-6" />,
         link: "/services/software/api",
         imageUrl: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3"
@@ -95,7 +95,7 @@ const services = [
     items: [
       {
         title: "Data Analytics",
-        description: "Transform your raw data into actionable insights with our advanced analytics and visualization solutions.",
+        description: "Actionable Insights Through Powerful Data Analytics We transform your raw data into strategic intelligence with advanced analytics, visualization, and predictive modeling. Our solutions uncover hidden patterns, optimize decisions, and drive measurable business growth. Let's turn your data into your most valuable asset.",
         icon: <BarChart2 className="h-6 w-6" />,
         link: "/services/data/analytics",
         imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3"
@@ -109,7 +109,7 @@ const services = [
       },
       {
         title: "Data Management",
-        description: "Comprehensive data management solutions ensuring data quality, security, and accessibility.",
+        description: "Streamline Your Data Ecosystem with Expert Data Management We design secure, scalable solutions for data integration, governance, and quality to turn information into your most strategic asset. Our approach ensures clean, organized and accessible data across all your systems. Let's build a future-proof foundation for analytics, AI and business growth.",
         icon: <Database className="h-6 w-6" />,
         link: "/services/data/management",
         imageUrl: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3"
@@ -121,21 +121,21 @@ const services = [
     items: [
       {
         title: "AI/ML Solution",
-        description: "End-to-end management of your IT infrastructure ensuring optimal performance and reliability.",
+        description: "Intelligent AI/ML Solutions for Smarter Business Decisions We design and deploy custom artificial intelligence and machine learning models to automate processes, predict trends, and unlock data-driven insights. Our solutions integrate seamlessly with your systems to enhance efficiency, accuracy, and competitive advantage. Transform your operations with cutting-edge AI tailored to your specific needs.",
         icon: <Server className="h-6 w-6" />,
         link: "/services/managed/infrastructure",
         imageUrl: "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3"
       },
       {
         title: "Salesforce Consulting",
-        description: "Round-the-clock monitoring and support to ensure your systems are always running smoothly.",
+        description: "Accelerate Growth with Expert Salesforce Consulting. We optimize your CRM with custom Salesforce solutions - from implementation to automation and analytics - tailored to your sales funnel. Our certified consultants streamline processes, enhance customer relationships, and drive revenue through the platform's full potential. Let's transform your Salesforce into a competitive advantage.",
         icon: <Clock className="h-6 w-6" />,
         link: "/services/managed/monitoring",
         imageUrl: "https://images.unsplash.com/photo-1531973576160-7125cd663d86?ixlib=rb-4.0.3"
       },
       {
         title: "Business Workflow Solutions ",
-        description: "Dedicated help desk support providing quick resolution to technical issues and user queries.",
+        description: "Transform Operations with Smart Workflow Solutions. We analyze, automate and optimize your business processes to eliminate inefficiencies and boost productivity. Our tailored systems integrate seamlessly with your existing tools to create frictionless workflows. Let's redesign how work gets done to save time and reduce costs.",
         icon: <Headphones className="h-6 w-6" />,
         link: "/services/managed/helpdesk",
         imageUrl: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3"
