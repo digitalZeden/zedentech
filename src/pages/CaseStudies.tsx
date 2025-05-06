@@ -16,86 +16,86 @@ import {
 
 const caseStudies = [
   {
-    title: "Digital Transformation for Global Financial Institution",
-    client: "Major Bank",
-    industry: "Finance",
-    excerpt: "Implemented a comprehensive digital transformation strategy, modernizing legacy systems and introducing cloud solutions that improved operational efficiency by 35%.",
+    title: "Digital Transformation for Ed-Tech Company",
+    client: "Millionaire’s Academy",
+    industry: "Education",
+    excerpt: "Future-Ready Learning Through Digital Transformation. We modernize Ed-Tech platforms with cloud-based solutions, AI-driven personalization, and seamless LMS integrations to enhance engagement and scalability. Our tailored approach bridges pedagogy with technology to create immersive, data-informed learning experiences. Let's reimagine education together with cutting-edge digital solutions",
     imageUrl: "https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?ixlib=rb-4.0.3",
     slug: "financial-digital-transformation",
     tags: ["Digital Transformation", "Cloud Migration", "Enterprise Architecture"]
   },
   {
+    title: "Mobile Application Development",
+    client: "Precision Scienticfic Equipment",
+    industry: "Manufactuirng",
+    excerpt: "Precision Calibration at Your Fingertips. Our iPad app streamlines scientific equipment calibration with step-by-step guidance, automated documentation, and real-time accuracy validation. Designed for lab technicians, it ensures compliance with ISO/IEC 17025 standards while reducing human error. Transform complex calibration processes into efficient, paperless workflows with intuitive mobile technology.",
+    imageUrl: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3",
+    slug: "credit-union-mobile-banking",
+    tags: ["Mobile Development", "UX Design", "Security"]
+  },
+  {
     title: "Healthcare Provider Security Enhancement",
-    client: "National Healthcare Group",
+    client: "Arrazi Clinics",
     industry: "Healthcare",
-    excerpt: "Developed and implemented an advanced cybersecurity framework that protected patient data and ensured HIPAA compliance while improving system performance.",
+    excerpt: "Secure Patient Data with HIPAA-Compliant Protection.We implement robust cybersecurity measures tailored for healthcare systems, including risk assessments, access controls, and encryption to safeguard PHI. Our solutions ensure continuous compliance while preventing breaches and minimizing downtime. Protect your practice and patient trust with enterprise-grade security designed for medical environments.",
     imageUrl: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3",
     slug: "healthcare-security-enhancement",
     tags: ["Cybersecurity", "Compliance", "Infrastructure"]
   },
   {
     title: "Smart Manufacturing IoT Implementation",
-    client: "Global Manufacturing Corp",
+    client: "Precision Valves Services",
     industry: "Manufacturing",
-    excerpt: "Designed and deployed an IoT solution connecting over 500 manufacturing devices, resulting in 28% reduced downtime and real-time production monitoring.",
+    excerpt: "Revolutionize Valve Production with Smart IoT Solutions. We implement cutting-edge IoT sensors and real-time monitoring systems to optimize your manufacturing efficiency, predictive maintenance, and quality control. Our tailored solutions connect your valve production line for data-driven decisions and Industry 4.0 transformation. Let's turn operational data into competitive advantage with seamless IIoT integration.",
     imageUrl: "https://images.unsplash.com/photo-1717444308634-0d96bf5cdd53?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     slug: "manufacturing-iot-implementation",
     tags: ["IoT", "Data Analytics", "Smart Factory"]
   },
-  {
-    title: "Cloud Migration for Retail Chain",
-    client: "Continental Retail",
-    industry: "Retail",
-    excerpt: "Migrated legacy on-premise systems to a secure cloud infrastructure, reducing IT costs by 40% and enabling rapid scaling during peak shopping seasons.",
-    imageUrl: "https://images.unsplash.com/photo-1481437156560-3205f6a55735?ixlib=rb-4.0.3",
-    slug: "retail-cloud-migration",
-    tags: ["Cloud Migration", "Infrastructure", "Cost Optimization"]
-  },
-  {
-    title: "AI-Powered Customer Service Platform",
-    client: "Global Telecom Provider",
-    industry: "Telecommunications",
-    excerpt: "Developed an AI-driven customer service platform that reduced response times by 65% and improved customer satisfaction scores by 28%.",
-    imageUrl: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3",
-    slug: "telecom-ai-customer-service",
-    tags: ["AI", "Machine Learning", "Customer Experience"]
-  },
-  {
-    title: "Enterprise Data Warehouse Implementation",
-    client: "International Logistics Corporation",
-    industry: "Logistics",
-    excerpt: "Designed and deployed a comprehensive data warehouse solution that consolidated data from 15 disparate systems, enabling advanced analytics and reporting.",
-    imageUrl: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3",
-    slug: "logistics-data-warehouse",
-    tags: ["Data Analytics", "Business Intelligence", "Integration"]
-  },
-  {
-    title: "DevOps Transformation for Insurance Provider",
-    client: "National Insurance Group",
-    industry: "Insurance",
-    excerpt: "Implemented CI/CD pipelines and DevOps practices that reduced deployment times from weeks to hours and improved software quality.",
-    imageUrl: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3",
-    slug: "insurance-devops-transformation",
-    tags: ["DevOps", "Automation", "Software Development"]
-  },
-  {
-    title: "Mobile Application Development",
-    client: "Precision Scienticfic Equipment",
-    industry: "Manufactuirng",
-    excerpt: "Developed a secure, feature-rich mobile banking application that increased digital engagement by 45% and enabled new customer acquisition channels.",
-    imageUrl: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3",
-    slug: "credit-union-mobile-banking",
-    tags: ["Mobile Development", "UX Design", "Security"]
-  },
-  {
-    title: "Blockchain Supply Chain Solution",
-    client: "Global Pharmaceutical Company",
-    industry: "Healthcare",
-    excerpt: "Created a blockchain-based supply chain tracking system that ensured compliance, reduced counterfeiting, and improved visibility across the distribution network.",
-    imageUrl: "https://images.unsplash.com/photo-1582139329536-e7284fece509?ixlib=rb-4.0.3",
-    slug: "pharma-blockchain-supply-chain",
-    tags: ["Blockchain", "Supply Chain", "Compliance"]
-  }
+  // {
+  //   title: "Cloud Migration for Retail Chain",
+  //   client: "Manufactuirng",
+  //   industry: "Precision Valves Services",
+  //   excerpt: "Migrated legacy on-premise systems to a secure cloud infrastructure, reducing IT costs by 40% and enabling rapid scaling during peak shopping seasons.",
+  //   imageUrl: "https://images.unsplash.com/photo-1481437156560-3205f6a55735?ixlib=rb-4.0.3",
+  //   slug: "retail-cloud-migration",
+  //   tags: ["Cloud Migration", "Infrastructure", "Cost Optimization"]
+  // },
+  // {
+  //   title: "AI-Powered Customer Service Platform",
+  //   client: "Global Telecom Provider",
+  //   industry: "Telecommunications",
+  //   excerpt: "Developed an AI-driven customer service platform that reduced response times by 65% and improved customer satisfaction scores by 28%.",
+  //   imageUrl: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3",
+  //   slug: "telecom-ai-customer-service",
+  //   tags: ["AI", "Machine Learning", "Customer Experience"]
+  // },
+  // {
+  //   title: "Enterprise Data Warehouse Implementation",
+  //   client: "International Logistics Corporation",
+  //   industry: "Logistics",
+  //   excerpt: "Designed and deployed a comprehensive data warehouse solution that consolidated data from 15 disparate systems, enabling advanced analytics and reporting.",
+  //   imageUrl: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3",
+  //   slug: "logistics-data-warehouse",
+  //   tags: ["Data Analytics", "Business Intelligence", "Integration"]
+  // },
+  // {
+  //   title: "DevOps Transformation for Insurance Provider",
+  //   client: "National Insurance Group",
+  //   industry: "Insurance",
+  //   excerpt: "Implemented CI/CD pipelines and DevOps practices that reduced deployment times from weeks to hours and improved software quality.",
+  //   imageUrl: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3",
+  //   slug: "insurance-devops-transformation",
+  //   tags: ["DevOps", "Automation", "Software Development"]
+  // },
+  // {
+  //   title: "Blockchain Supply Chain Solution",
+  //   client: "Global Pharmaceutical Company",
+  //   industry: "Healthcare",
+  //   excerpt: "Created a blockchain-based supply chain tracking system that ensured compliance, reduced counterfeiting, and improved visibility across the distribution network.",
+  //   imageUrl: "https://images.unsplash.com/photo-1582139329536-e7284fece509?ixlib=rb-4.0.3",
+  //   slug: "pharma-blockchain-supply-chain",
+  //   tags: ["Blockchain", "Supply Chain", "Compliance"]
+  // }
 ];
 
 const CaseStudies = () => {
@@ -116,7 +116,7 @@ const CaseStudies = () => {
       </section>
       
       {/* Filter Section */}
-      <section className="py-10 px-4 bg-gray-50 dark:bg-navy-800/30">
+      {/* <section className="py-10 px-4 bg-gray-50 dark:bg-navy-800/30">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <h2 className="text-2xl font-bold">Our Success Stories</h2>
@@ -160,54 +160,8 @@ const CaseStudies = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       
-      {/* Feature Case Study */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto">
-          <div className="relative overflow-hidden rounded-xl bg-white dark:bg-navy-700 shadow-xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-              <div className="p-10 lg:p-16">
-                <Badge className="mb-6">Featured Case Study</Badge>
-                <h2 className="text-3xl font-bold mb-4">Digital Transformation Journey for Global Financial Institution</h2>
-                <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
-                  A comprehensive transformation initiative that modernized legacy systems, implemented cloud infrastructure, and enhanced digital customer experiences, resulting in 35% improved efficiency and 22% cost reduction.
-                </p>
-                
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center">
-                    <span className="font-medium w-32">Client:</span>
-                    <span className="text-slate-600 dark:text-slate-300">Major Bank</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="font-medium w-32">Industry:</span>
-                    <span className="text-slate-600 dark:text-slate-300">Finance</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="font-medium w-32">Timeline:</span>
-                    <span className="text-slate-600 dark:text-slate-300">18 months</span>
-                  </div>
-                </div>
-                
-                <Button asChild className="group">
-                  <a href="/case-studies/financial-digital-transformation" className="inline-flex items-center">
-                    Read Full Case Study
-                    <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
-                  </a>
-                </Button>
-              </div>
-              
-              <div className="hidden lg:block">
-                <img 
-                  src="https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?ixlib=rb-4.0.3" 
-                  alt="Digital Transformation Case Study" 
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       
       {/* Case Studies Grid */}
       <section className="py-16 px-4">
@@ -222,12 +176,12 @@ const CaseStudies = () => {
           </div>
           
           <div className="mt-12 text-center">
-            <Button variant="outline" className="group">
+            {/* <Button variant="outline" className="group">
               <span className="inline-flex items-center">
                 Load More Case Studies
                 <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
               </span>
-            </Button>
+            </Button> */}
           </div>
         </div>
       </section>

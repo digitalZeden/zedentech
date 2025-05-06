@@ -1,3 +1,4 @@
+Leadership and team members
 <section className="py-20 px-4 bg-gray-50 dark:bg-navy-800/30">
         <div className="container mx-auto">
           <div className="text-center mb-16">
@@ -93,6 +94,56 @@
                     <Twitter size={18} />
                   </a>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+      {/* Feature Case Study */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto">
+          <div className="relative overflow-hidden rounded-xl bg-white dark:bg-navy-700 shadow-xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2">
+              <div className="p-10 lg:p-16">
+                <Badge className="mb-6">Featured Case Study</Badge>
+                <h2 className="text-3xl font-bold mb-4">Digital Transformation Journey for Global Financial Institution</h2>
+                <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
+                  A comprehensive transformation initiative that modernized legacy systems, implemented cloud infrastructure, and enhanced digital customer experiences, resulting in 35% improved efficiency and 22% cost reduction.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center">
+                    <span className="font-medium w-32">Client:</span>
+                    <span className="text-slate-600 dark:text-slate-300">Major Bank</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="font-medium w-32">Industry:</span>
+                    <span className="text-slate-600 dark:text-slate-300">Finance</span>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="font-medium w-32">Timeline:</span>
+                    <span className="text-slate-600 dark:text-slate-300">18 months</span>
+                  </div>
+                </div>
+                
+                <Button asChild className="group">
+                  <a href="/case-studies/financial-digital-transformation" className="inline-flex items-center">
+                    Read Full Case Study
+                    <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
+                  </a>
+                </Button>
+              </div>
+              
+              <div className="hidden lg:block">
+                <img 
+                  src="https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?ixlib=rb-4.0.3" 
+                  alt="Digital Transformation Case Study" 
+                  className="h-full w-full object-cover"
+                />
               </div>
             </div>
           </div>

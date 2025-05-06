@@ -54,11 +54,10 @@ const Footer = () => {
             <h3 className="font-bold text-xl mb-6">Our Services</h3>
             <ul className="space-y-3">
               {[
-                { name: "Cloud Services", to: "/services" },
-                { name: "Cybersecurity", to: "/services" },
-                { name: "Software Development", to: "/services" },
-                { name: "IT Consulting", to: "/services" },
-                { name: "Managed IT Services", to: "/services" },
+                { name: "IT Professional Services", to: "/services" },
+                { name: "Data Transformation", to: "/data-transformation" },
+                { name: "Application Development", to: "/services" },
+                { name: "Cyber Security", to: "/services" },
               ].map(({ name, to }) => (
                 <li key={name}>
                   <NavLink 
