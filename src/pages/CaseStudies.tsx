@@ -20,7 +20,7 @@ const caseStudies = [
     client: "Millionaire’s Academy",
     industry: "Education",
     excerpt: "Future-Ready Learning Through Digital Transformation. We modernize Ed-Tech platforms with cloud-based solutions, AI-driven personalization, and seamless LMS integrations to enhance engagement and scalability. Our tailored approach bridges pedagogy with technology to create immersive, data-informed learning experiences. Let's reimagine education together with cutting-edge digital solutions",
-    imageUrl: "https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?ixlib=rb-4.0.3",
+    imageUrl: "./lms.jpg",
     slug: "financial-digital-transformation",
     tags: ["Digital Transformation", "Cloud Migration", "Enterprise Architecture"]
   },
@@ -29,7 +29,7 @@ const caseStudies = [
     client: "Precision Scienticfic Equipment",
     industry: "Manufactuirng",
     excerpt: "Precision Calibration at Your Fingertips. Our iPad app streamlines scientific equipment calibration with step-by-step guidance, automated documentation, and real-time accuracy validation. Designed for lab technicians, it ensures compliance with ISO/IEC 17025 standards while reducing human error. Transform complex calibration processes into efficient, paperless workflows with intuitive mobile technology.",
-    imageUrl: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3",
+    imageUrl: "./manufacturing.jpg",
     slug: "credit-union-mobile-banking",
     tags: ["Mobile Development", "UX Design", "Security"]
   },
@@ -38,7 +38,7 @@ const caseStudies = [
     client: "Arrazi Clinics",
     industry: "Healthcare",
     excerpt: "Secure Patient Data with HIPAA-Compliant Protection.We implement robust cybersecurity measures tailored for healthcare systems, including risk assessments, access controls, and encryption to safeguard PHI. Our solutions ensure continuous compliance while preventing breaches and minimizing downtime. Protect your practice and patient trust with enterprise-grade security designed for medical environments.",
-    imageUrl: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3",
+    imageUrl: "healthcare.jpg",
     slug: "healthcare-security-enhancement",
     tags: ["Cybersecurity", "Compliance", "Infrastructure"]
   },
@@ -47,7 +47,7 @@ const caseStudies = [
     client: "Precision Valves Services",
     industry: "Manufacturing",
     excerpt: "Revolutionize Valve Production with Smart IoT Solutions. We implement cutting-edge IoT sensors and real-time monitoring systems to optimize your manufacturing efficiency, predictive maintenance, and quality control. Our tailored solutions connect your valve production line for data-driven decisions and Industry 4.0 transformation. Let's turn operational data into competitive advantage with seamless IIoT integration.",
-    imageUrl: "https://images.unsplash.com/photo-1717444308634-0d96bf5cdd53?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    imageUrl: "iot.jpg",
     slug: "manufacturing-iot-implementation",
     tags: ["IoT", "Data Analytics", "Smart Factory"]
   },

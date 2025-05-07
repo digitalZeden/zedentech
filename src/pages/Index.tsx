@@ -60,7 +60,7 @@ const caseStudies = [
     client: "Millionaire’s Academy",
     industry: "Academy",
     excerpt: "Implemented a comprehensive digital transformation strategy, modernizing legacy systems and introducing cloud solutions that improved operational efficiency by 35%.",
-    imageUrl: "https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?ixlib=rb-4.0.3",
+    imageUrl: "./lms.jpg",
     slug: "financial-digital-transformation",
     tags: ["Digital Transformation", "Cloud Migration", "Enterprise Architecture"]
   },
@@ -69,7 +69,7 @@ const caseStudies = [
     client: "Arrazi Clinics",
     industry: "Healthcare",
     excerpt: "Developed and implemented an advanced cybersecurity framework that protected patient data and ensured HIPAA compliance while improving system performance.",
-    imageUrl: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3",
+    imageUrl: "./healthcare.jpg",
     slug: "healthcare-security-enhancement",
     tags: ["Cybersecurity", "Compliance", "Infrastructure"]
   },
@@ -78,7 +78,7 @@ const caseStudies = [
     client: "Precision Valves Services",
     industry: "Manufacturing",
     excerpt: "Designed and deployed an IoT solution connecting over 500 manufacturing devices, resulting in 28% reduced downtime and real-time production monitoring.",
-    imageUrl: "https://images.unsplash.com/photo-1553406830-f6e44ac97624?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    imageUrl: "./manufacturing.jpg",
     slug: "manufacturing-iot-implementation",
     tags: ["IoT", "Data Analytics", "Smart Factory"]
   }
