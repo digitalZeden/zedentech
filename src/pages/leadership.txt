@@ -149,3 +149,51 @@ Leadership and team members
           </div>
         </div>
       </section>
+
+
+            
+      {/* Filter Section - More intuitive and minimal */}
+      {/* <section className="py-8 px-4 sticky top-16 z-20 bg-white dark:bg-navy-800 shadow-md">
+        <div className="container mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-2">
+                <Filter size={18} className="text-crimson-500" />
+                <span className="font-medium">Filter by:</span>
+              </div>
+              
+              <div className="flex flex-wrap gap-3">
+                {industries.map((industry, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setActiveFilter(industry)}
+                    className={`px-3 py-1 text-sm rounded-full transition-colors ${
+                      activeFilter === industry 
+                        ? 'bg-navy-600 text-white' 
+                        : 'bg-gray-100 dark:bg-navy-700 hover:bg-gray-200 dark:hover:bg-navy-600'
+                    }`}
+                  >
+                    {industry}
+                  </button>
+                ))}
+              </div>
+            </div>
+            
+            <div className="flex gap-3">
+              {solutionTypes.map((solution, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveTag(solution)}
+                  className={`px-3 py-1 text-sm rounded-full transition-colors ${
+                    activeTag === solution 
+                      ? 'bg-crimson-500 text-white' 
+                      : 'bg-gray-100 dark:bg-navy-700 hover:bg-gray-200 dark:hover:bg-navy-600'
+                  }`}
+                >
+                  {solution}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section> */}

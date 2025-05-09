@@ -57,7 +57,7 @@ const services = [
 const caseStudies = [
   {
     title: "Digital Transformation for Ed-Tech Company",
-    client: "Millionaire’s Academy",
+    client: "Millionaire's Academy",
     industry: "Academy",
     excerpt: "Implemented a comprehensive digital transformation strategy, modernizing legacy systems and introducing cloud solutions that improved operational efficiency by 35%.",
     imageUrl: "./lms.jpg",
@@ -110,12 +110,12 @@ const testimonials = [
 
 const Home = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-gray-50 dark:from-navy-900 dark:to-navy-950">
       <Navbar />
       
-      {/* Hero Section */}
+      {/* Hero Section with Updated Title */}
       <HeroSection 
-        title="Innovating with Cutting-Edge IT Application Services"
+        title="Innovating with Cutting Edge IT Technologies and Delivering Application Services"
         subtitle="Transforming businesses through strategic technology solutions, custom software development, and expert IT management."
         cta={{
           primary: "Get Started",
@@ -126,11 +126,15 @@ const Home = () => {
         imageUrl="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3"
       />
       
-      {/* Services Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+      {/* Services Section with Enhanced UI */}
+      <section className="py-24 px-4 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-crimson-100 dark:bg-navy-800 rounded-full blur-3xl opacity-20 -translate-y-1/2 translate-x-1/4"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-navy-100 dark:bg-crimson-900 rounded-full blur-3xl opacity-20 translate-y-1/3 -translate-x-1/3"></div>
+        
+        <div className="container mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <span className="inline-block py-1 px-3 rounded-full bg-crimson-100 dark:bg-crimson-900 text-crimson-600 dark:text-crimson-300 text-sm font-medium mb-4">Our Expertise</span>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-black dark:text-white">Our Services</h2>
             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
               We offer a comprehensive range of IT services to help your business thrive in the digital age.
             </p>
@@ -145,57 +149,61 @@ const Home = () => {
                 icon={service.icon}
                 link={service.link}
                 imageUrl={service.imageUrl}
-                category={service.title.split(' ')[0]} // Add this line to provide the category
+                category={service.title.split(' ')[0]}
               />
             ))}
           </div>
           
-          <div className="mt-12 text-center">
-            <Button asChild variant="outline" className="group">
-              <a href="/services" className="inline-flex items-center">
+          <div className="mt-16 text-center">
+            <Button asChild variant="outline" className="group hover:bg-crimson-50 hover:text-crimson-600 dark:hover:bg-navy-800 dark:hover:text-white border-2 border-crimson-200 dark:border-navy-600 px-8 py-6 rounded-xl">
+              <a href="/services" className="inline-flex items-center font-bold">
                 View All Services
-                <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
+                <ArrowRight size={18} className="ml-3 transition-transform group-hover:translate-x-2" />
               </a>
             </Button>
           </div>
         </div>
       </section>
       
-      {/* Stats Section */}
-      <section className="bg-navy-500 text-white py-16">
-        <div className="container mx-auto px-4">
+      {/* Stats Section with Enhanced UI */}
+      <section className="bg-gradient-to-r from-navy-600 to-navy-800 text-white py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1531973576160-7125cd663d86?ixlib=rb-4.0.3')] opacity-10 bg-cover bg-center"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold mb-2 text-crimson-400">15+</div>
-              <div className="text-gray-300">Years Experience</div>
+            <div className="p-6 backdrop-blur-sm bg-white/5 rounded-xl hover:bg-white/10 transition-all transform hover:-translate-y-1">
+              <div className="text-5xl font-bold mb-3 text-crimson-400">15+</div>
+              <div className="text-gray-200 font-medium">Years Experience</div>
             </div>
-            <div>
-              <div className="text-4xl font-bold mb-2 text-crimson-400">500+</div>
-              <div className="text-gray-300">Clients Worldwide</div>
+            <div className="p-6 backdrop-blur-sm bg-white/5 rounded-xl hover:bg-white/10 transition-all transform hover:-translate-y-1">
+              <div className="text-5xl font-bold mb-3 text-crimson-400">500+</div>
+              <div className="text-gray-200 font-medium">Clients Worldwide</div>
             </div>
-            <div>
-              <div className="text-4xl font-bold mb-2 text-crimson-400">98%</div>
-              <div className="text-gray-300">Client Satisfaction</div>
+            <div className="p-6 backdrop-blur-sm bg-white/5 rounded-xl hover:bg-white/10 transition-all transform hover:-translate-y-1">
+              <div className="text-5xl font-bold mb-3 text-crimson-400">98%</div>
+              <div className="text-gray-200 font-medium">Client Satisfaction</div>
             </div>
-            <div>
-              <div className="text-4xl font-bold mb-2 text-crimson-400">200+</div>
-              <div className="text-gray-300">IT Professionals</div>
+            <div className="p-6 backdrop-blur-sm bg-white/5 rounded-xl hover:bg-white/10 transition-all transform hover:-translate-y-1">
+              <div className="text-5xl font-bold mb-3 text-crimson-400">200+</div>
+              <div className="text-gray-200 font-medium">IT Professionals</div>
             </div>
           </div>
         </div>
       </section>
       
-      {/* Case Studies Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Case Studies</h2>
+      {/* Case Studies Section with Enhanced UI */}
+      <section className="py-24 px-4 relative overflow-hidden">
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-navy-100 dark:bg-crimson-900 rounded-full blur-3xl opacity-20 translate-y-1/2 translate-x-1/3"></div>
+        
+        <div className="container mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <span className="inline-block py-1 px-3 rounded-full bg-navy-100 dark:bg-navy-800 text-navy-600 dark:text-navy-300 text-sm font-medium mb-4">Success Stories</span>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-black dark:text-white">Case Studies</h2>
             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
               Explore how we've helped organizations solve complex challenges and achieve their business goals.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {caseStudies.map((study, index) => (
               <CaseStudyCard 
                 key={index}
@@ -204,58 +212,60 @@ const Home = () => {
             ))}
           </div>
           
-          <div className="mt-12 text-center">
-            <Button asChild variant="outline" className="group">
-              <a href="/case-studies" className="inline-flex items-center">
+          <div className="mt-16 text-center">
+            <Button asChild variant="outline" className="group hover:bg-navy-50 hover:text-navy-600 dark:hover:bg-navy-800 dark:hover:text-white border-2 border-navy-200 dark:border-navy-600 px-8 py-6 rounded-xl">
+              <a href="/case-studies" className="inline-flex items-center font-bold">
                 View All Case Studies
-                <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
+                <ArrowRight size={18} className="ml-3 transition-transform group-hover:translate-x-2" />
               </a>
             </Button>
           </div>
         </div>
       </section>
       
-      {/* Why Choose Us Section */}
-      <section className="py-20 px-4 bg-gray-50 dark:bg-navy-800/30">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* Why Choose Us Section with Enhanced UI */}
+      <section className="py-24 px-4 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-navy-900 dark:to-navy-950 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-crimson-500 via-navy-500 to-crimson-500"></div>
+        <div className="container mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose ZedEnTech Solutions?</h2>
-              <p className="text-lg text-slate-600 dark:text-slate-300 mb-8">
-              At ZedEnTech Solutions, we deliver scalable, secure, and high-performance IT applications powered by the latest advancements in software development, AI, cloud computing, and automation.
+              <span className="inline-block py-1 px-3 rounded-full bg-navy-100 dark:bg-navy-800 text-navy-600 dark:text-navy-300 text-sm font-medium mb-4">Why Us</span>
+              <h2 className="text-3xl md:text-5xl font-bold mb-8 text-black dark:text-white">Why Choose ZedEnTech Solutions?</h2>
+              <p className="text-lg text-slate-600 dark:text-slate-300 mb-10">
+                At ZedEnTech Solutions, we deliver scalable, secure, and high-performance IT applications powered by the latest advancements in software development, AI, cloud computing, and automation.
               </p>
               
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="w-10 h-10 rounded-full bg-crimson-100 dark:bg-navy-700 flex items-center justify-center text-crimson-500">
-                    <Zap size={20} />
+              <div className="space-y-8">
+                <div className="flex gap-6 group">
+                  <div className="w-12 h-12 rounded-xl bg-crimson-100 dark:bg-navy-700 flex items-center justify-center text-crimson-500 group-hover:bg-crimson-500 group-hover:text-white transition-colors">
+                    <Zap size={24} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg mb-1">Innovative Solutions</h3>
+                    <h3 className="font-bold text-xl mb-2">Innovative Solutions</h3>
                     <p className="text-slate-600 dark:text-slate-300">
                       Cutting-edge technologies tailored to your specific business challenges.
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex gap-4">
-                  <div className="w-10 h-10 rounded-full bg-crimson-100 dark:bg-navy-700 flex items-center justify-center text-crimson-500">
-                    <Users size={20} />
+                <div className="flex gap-6 group">
+                  <div className="w-12 h-12 rounded-xl bg-crimson-100 dark:bg-navy-700 flex items-center justify-center text-crimson-500 group-hover:bg-crimson-500 group-hover:text-white transition-colors">
+                    <Users size={24} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg mb-1">Expert Team</h3>
+                    <h3 className="font-bold text-xl mb-2">Expert Team</h3>
                     <p className="text-slate-600 dark:text-slate-300">
                       Certified professionals with deep expertise across multiple industries.
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex gap-4">
-                  <div className="w-10 h-10 rounded-full bg-crimson-100 dark:bg-navy-700 flex items-center justify-center text-crimson-500">
-                    <PhoneCall size={20} />
+                <div className="flex gap-6 group">
+                  <div className="w-12 h-12 rounded-xl bg-crimson-100 dark:bg-navy-700 flex items-center justify-center text-crimson-500 group-hover:bg-crimson-500 group-hover:text-white transition-colors">
+                    <PhoneCall size={24} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg mb-1">24/7 Support</h3>
+                    <h3 className="font-bold text-xl mb-2">24/7 Support</h3>
                     <p className="text-slate-600 dark:text-slate-300">
                       Round-the-clock assistance and monitoring for your critical systems.
                     </p>
@@ -263,9 +273,9 @@ const Home = () => {
                 </div>
               </div>
               
-              <div className="mt-8">
-                <Button asChild className="bg-crimson-500 hover:bg-crimson-600">
-                  <a href="/about">Learn About Us</a>
+              <div className="mt-10">
+                <Button asChild className="bg-gradient-to-r from-crimson-500 to-crimson-600 hover:from-crimson-600 hover:to-crimson-700 px-8 py-6 rounded-xl">
+                  <a href="/about" className="font-bold">Learn About Us</a>
                 </Button>
               </div>
             </div>
@@ -274,16 +284,16 @@ const Home = () => {
               <img 
                 src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?ixlib=rb-4.0.3" 
                 alt="Team working together" 
-                className="rounded-lg shadow-xl"
+                className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300"
               />
-              <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-crimson-500 rounded-lg -z-10"></div>
-              <div className="absolute -top-6 -right-6 w-48 h-48 bg-navy-500 rounded-lg -z-10"></div>
+              <div className="absolute -bottom-8 -left-8 w-64 h-64 bg-gradient-to-br from-crimson-500 to-crimson-400 rounded-2xl -z-10 opacity-80 blur-sm"></div>
+              <div className="absolute -top-8 -right-8 w-64 h-64 bg-gradient-to-br from-navy-500 to-navy-600 rounded-2xl -z-10 opacity-80 blur-sm"></div>
             </div>
           </div>
         </div>
       </section>
       
-      {/* Testimonials Section */}
+      {/* Testimonials Section (commented out as in original) */}
       <section className="py-20 px-4">
         <div className="container mx-auto">
           {/* <div className="text-center mb-12">
@@ -304,25 +314,33 @@ const Home = () => {
         </div>
       </section>
       
-      {/* CTA Section */}
-      <section className="py-20 px-4 bg-navy-500 text-white">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Contact us today to discuss how our IT services can help you achieve your business goals.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg" className="bg-crimson-500 hover:bg-crimson-600">
-              <a href="/contact">Get in Touch</a>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="bg-transparent text-white border-white hover:bg-white/10">
-              <a href="/services">Explore Services</a>
-            </Button>
+      {/* CTA Section with Enhanced UI */}
+      <section className="py-24 px-4 bg-gradient-to-r from-navy-600 to-navy-800 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-white/5 bg-[size:20px_20px]"></div>
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-navy-600 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-navy-800 to-transparent"></div>
+        </div>
+        
+        <div className="container mx-auto text-center relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">Ready to Transform Your Business?</h2>
+            <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
+              Contact us today to discuss how our IT services can help you achieve your business goals.
+            </p>
+            <div className="flex flex-wrap justify-center gap-6">
+              <Button asChild size="lg" className="bg-gradient-to-r from-crimson-500 to-crimson-600 hover:from-crimson-600 hover:to-crimson-700 px-8 py-7 rounded-xl">
+                <a href="/contact" className="font-bold text-lg">Get in Touch</a>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="bg-transparent text-white border-2 border-white/30 hover:bg-white/10 px-8 py-7 rounded-xl">
+                <a href="/services" className="font-bold text-lg">Explore Services</a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
       
-      {/* Partners */}
+      {/* Partners Section (keeping the empty section as in original) */}
       <section className="py-16 px-4 bg-gray-50 dark:bg-navy-800/30">
         <div className="container mx-auto">
           {/* <div className="text-center mb-10">
