@@ -314,29 +314,31 @@ const Home = () => {
         </div>
       </section>
       
-      {/* CTA Section with Enhanced UI */}
-      <section className="py-24 px-4 bg-gradient-to-r from-navy-600 to-navy-800 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-white/5 bg-[size:20px_20px]"></div>
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-navy-600 to-transparent"></div>
-          <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-navy-800 to-transparent"></div>
-        </div>
-        
+ {/* CTA Section - with improved design */}
+ <section className="py-20 px-4 bg-gradient-to-br from-navy-600 to-navy-800 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-white/5 bg-[size:20px_20px] opacity-30" />
         <div className="container mx-auto text-center relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">Ready to Transform Your Business?</h2>
-            <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
-              Contact us today to discuss how our IT services can help you achieve your business goals.
+          <div className="max-w-3xl mx-auto">
+            <span className="inline-block px-4 py-1.5 bg-white/20 text-white text-sm font-medium rounded-full mb-6">
+              Let's Connect
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Contact us today for a free consultation and discover how our services can drive your digital success.
             </p>
-            <div className="flex flex-wrap justify-center gap-6">
-              <Button asChild size="lg" className="bg-gradient-to-r from-crimson-500 to-crimson-600 hover:from-crimson-600 hover:to-crimson-700 px-8 py-7 rounded-xl">
-                <a href="/contact" className="font-bold text-lg">Get in Touch</a>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button asChild size="lg" className="bg-crimson-500 hover:bg-crimson-600">
+                <a href="/contact">Schedule Consultation</a>
               </Button>
-              <Button asChild variant="outline" size="lg" className="bg-transparent text-white border-2 border-white/30 hover:bg-white/10 px-8 py-7 rounded-xl">
-                <a href="/services" className="font-bold text-lg">Explore Services</a>
+              <Button asChild variant="outline" size="lg" className="bg-transparent text-white border-white hover:bg-white/10">
+                <a href="/case-studies">View Case Studies</a>
               </Button>
             </div>
           </div>
+          
+          {/* Decorative elements */}
+          <div className="absolute -bottom-16 -right-16 w-64 h-64 bg-crimson-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute -top-16 -left-16 w-64 h-64 bg-navy-300/20 rounded-full blur-3xl"></div>
         </div>
       </section>
       
