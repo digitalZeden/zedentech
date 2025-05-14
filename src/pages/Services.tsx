@@ -312,7 +312,7 @@ const Services = () => {
                 size="lg"
                 className="bg-crimson-500 hover:bg-crimson-600"
               >
-                <a href="/contact">Explore Services</a>
+                <a href="/services">Explore Services</a>
               </Button>
               <Button
                 asChild
@@ -320,7 +320,7 @@ const Services = () => {
                 size="lg"
                 className="border-[#f02238] text-[#f02238] hover:bg-[#f02238] hover:text-white text-lg"
               >
-                <a href="#case-studies">Contact Us</a>
+                <a href="/contact">Contact Us</a>
               </Button>
             </div>
           </div>

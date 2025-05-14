@@ -191,7 +191,7 @@ const CaseStudies = () => {
                 size="lg"
                 className="border-[#f02238] text-[#f02238] hover:bg-[#f02238] hover:text-white text-lg"
               >
-                <a href="#case-studies">View Case Studies</a>
+                <a href="/case-studies">View Case Studies</a>
               </Button>
             </div>
           </div>
