@@ -20,16 +20,19 @@ import {
   Brain,
   Headphones,
   Clock,
+  ChevronRight,
+  ChevronUp,
+  ChevronDown,
 } from "lucide-react";
 
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import { Button } from "@/components/ui/button";
 import ServiceCard from "@/components/ServiceCard";
 
-
-// Add after imports and before the Services component
+// Services data - unchanged
 const services = [
   {
     category: "cloud",
@@ -56,7 +59,7 @@ const services = [
         title: "IT Infrastruresture",
         description:
           "Rock-Solid IT Infrastructure for Business Continuity. We design, implement and manage secure, high-performance networks, servers and cloud systems tailored to your operational needs. Our proactive monitoring and enterprise-grade solutions ensure 99.9% uptime and seamless scalability. Let's build the technology foundation that powers your growth.",
-        icon: <Server className="h-6 w-6" />, // Changed to Server for infrastructure
+        icon: <Server className="h-6 w-6" />,
         link: "/services/cloud/multi-cloud",
         imageUrl:
           "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3",
@@ -70,7 +73,7 @@ const services = [
         title: "Cloud Migration",
         description:
           "Streamline Your Business with Seamless Cloud Migration.Our expert team ensures secure, cost-effective transitions to AWS, Azure, or Google Cloud with minimal downtime. We customize solutions to optimize performance, scalability, and security for your specific workloads. Let's modernize your infrastructure and unlock the full potential of cloud technology.",
-        icon: <Cloud className="h-6 w-6" />, // Changed to Cloud for cloud migration
+        icon: <Cloud className="h-6 w-6" />,
         link: "/services/cybersecurity/assessment",
         imageUrl:
           "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3",
@@ -79,7 +82,7 @@ const services = [
         title: "Cyber Security Assesment",
         description:
           "Fortify Your Defenses with Comprehensive Security Assessments We identify vulnerabilities across your networks, systems and applications through rigorous penetration testing and risk analysis. Our actionable reports prioritize threats and provide clear remediation strategies to strengthen your security posture. Protect your business before attackers strike – let's uncover your weak spots together.",
-        icon: <Shield className="h-6 w-6" />, // Changed to Shield for security
+        icon: <Shield className="h-6 w-6" />,
         link: "/services/cybersecurity/protection",
         imageUrl:
           "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3",
@@ -88,7 +91,7 @@ const services = [
         title: "Risk & Compilance Services",
         description:
           "Proactive Risk Management & Compliance Assurance We identify vulnerabilities, mitigate threats and ensure adherence to regulatory standards (GDPR, HIPAA, ISO) through comprehensive audits and tailored frameworks. Our experts translate complex requirements into actionable controls that protect your business while enabling growth. Achieve both security and compliance without compromising operational efficiency.",
-        icon: <FileCheck className="h-6 w-6" />, // Kept FileCheck as it's appropriate
+        icon: <FileCheck className="h-6 w-6" />,
         link: "/services/cybersecurity/compliance",
         imageUrl:
           "https://images.unsplash.com/photo-1509822929063-6b6cfc9b42f2?ixlib=rb-4.0.3",
@@ -193,18 +196,106 @@ const services = [
   },
 ];
 
+// Helper function for category descriptions
+const getCategoryDescription = (category) => {
+  const descriptions = {
+    cloud:
+      "Transform your business with scalable and secure cloud solutions that optimize performance and reduce costs.",
+    cybersecurity:
+      "Protect your digital assets with comprehensive security solutions that safeguard against evolving threats.",
+    software:
+      "Custom software solutions that streamline operations and deliver exceptional user experiences.",
+    consulting:
+      "Strategic guidance to help you navigate the complex technology landscape and achieve your business goals.",
+    data: "Turn your data into actionable insights with advanced analytics and AI-powered solutions.",
+    managed:
+      "Comprehensive IT management services that ensure your systems run smoothly 24/7.",
+  };
+  return descriptions[category] || "";
+};
+
+// Filter services by category for tabbed display
+const getServicesByCategory = (categoryName) => {
+  const category = services.find(c => c.category === categoryName);
+  return category ? category.items : [];
+};
+
+// Service card component with expand/collapse functionality
+const ExpandableServiceCard = ({ service, category }) => {
+  const [expanded, setExpanded] = useState(false);
+  
+  const toggleExpand = () => {
+    setExpanded(!expanded);
+  };
+
+  return (
+    <div className="group bg-white dark:bg-navy-800 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col">
+      <div className="relative h-48 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+        <img
+          src={service.imageUrl}
+          alt={service.title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute top-4 left-4 bg-crimson-500 text-white text-xs uppercase tracking-wider py-1 px-2 rounded z-20">
+          {category}
+        </div>
+      </div>
+      
+      <div className="p-6 flex-grow flex flex-col">
+        <div className="flex items-center mb-4">
+          <div className="w-10 h-10 rounded-full bg-crimson-100 dark:bg-navy-700 flex items-center justify-center text-crimson-500">
+            {service.icon}
+          </div>
+          <h3 className="font-bold text-xl ml-3">{service.title}</h3>
+        </div>
+        
+        <div className={`text-slate-600 dark:text-slate-300 mb-6 ${expanded ? '' : 'line-clamp-3'}`}>
+          {service.description}
+        </div>
+        
+        <div className="mt-auto">
+          <button 
+            onClick={toggleExpand}
+            className="text-crimson-500 font-medium flex items-center group-hover:text-crimson-600 transition-colors"
+          >
+            {expanded ? (
+              <>
+                Show Less
+                <ChevronUp className="ml-2 w-4 h-4 transition-transform" />
+              </>
+            ) : (
+              <>
+                Read More
+                <ChevronDown className="ml-2 w-4 h-4 transition-transform" />
+              </>
+            )}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Services = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-navy-900">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-r from-navy-600 to-navy-800 text-white relative overflow-hidden">
+      {/* Modern Hero Section with 3D-like elements */}
+      <section className="pt-32 pb-24 bg-gradient-to-br from-navy-600 via-navy-700 to-navy-900 text-white relative overflow-hidden">
+        {/* Abstract background elements */}
         <div className="absolute inset-0 bg-grid-white/5 bg-[size:20px_20px] opacity-30" />
-        <div className="container mx-auto px-4 relative">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-crimson-500/30 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-crimson-500/20 rounded-full blur-3xl" />
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Our IT Services
+            <div className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-sm text-white text-sm font-medium rounded-full mb-6">
+              Your Technology Partner
+            </div>
+            <h1 className="text-5xl md:text-6xl font-bold mb-8 tracking-tight">
+              Our IT <span className="text-crimson-400">Services</span>
             </h1>
             <p className="text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
               At ZedEnTech we help businesses leverage cutting-edge technology
@@ -212,25 +303,55 @@ const Services = () => {
               growth. Our strategic IT consulting services empower organizations
               to navigate digital disruption with confidence, from cloud
               adoption and cybersecurity to AI-driven automation and scalable
-              software architectures.{" "}
+              software architectures.
             </p>
+            
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <Button
+                asChild
+                size="lg"
+                className="bg-crimson-500 hover:bg-crimson-600"
+              >
+                <a href="/contact">Explore Services</a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="border-[#f02238] text-[#f02238] hover:bg-[#f02238] hover:text-white text-lg"
+              >
+                <a href="#case-studies">Contact Us</a>
+              </Button>
+            </div>
           </div>
         </div>
+        
+        {/* Abstract shapes */}
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-gray-50 dark:to-navy-900"></div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-20 px-4">
+      {/* Services Section with Category Tabs and Card Grid */}
+      <section id="services" className="py-20 px-4">
         <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-1.5 bg-crimson-500/10 text-crimson-500 text-sm font-medium rounded-full mb-4">
+              Our Expertise
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Comprehensive IT Solutions
+            </h2>
+            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+              Tailored technology services designed to address your unique business challenges
+            </p>
+          </div>
+
+          {/* Services grid with hover effects and improved cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((category) =>
               category.items.map((service, index) => (
-                <ServiceCard
+                <ExpandableServiceCard 
                   key={`${category.category}-${index}`}
-                  title={service.title}
-                  description={service.description}
-                  icon={service.icon}
-                  link={service.link}
-                  imageUrl={service.imageUrl}
+                  service={service}
                   category={category.category}
                 />
               ))
@@ -239,11 +360,15 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Our Approach Section - with improved visuals */}
-      <section className="py-20 px-4 bg-gray-50 dark:bg-navy-800/30">
-        <div className="container mx-auto">
+      {/* Modern Process Section */}
+      <section className="py-24 px-4 bg-white dark:bg-navy-800/30 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute -top-40 -left-40 w-80 h-80 bg-crimson-500/5 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-navy-500/5 rounded-full blur-3xl" />
+        
+        <div className="container mx-auto relative z-10">
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 bg-crimson-500 text-white text-sm font-medium rounded-full mb-4">
+            <span className="inline-block px-4 py-1.5 bg-crimson-500/10 text-crimson-500 text-sm font-medium rounded-full mb-4">
               Our Process
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">How We Work</h2>
@@ -254,12 +379,12 @@ const Services = () => {
           </div>
 
           <div className="relative">
-            {/* Process connection line */}
-            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-crimson-200 dark:bg-navy-600 -translate-y-1/2 z-0" />
+            {/* Process connection line with animation */}
+            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-crimson-200 via-crimson-300 to-navy-300 dark:from-navy-600 dark:via-crimson-700 dark:to-navy-600 -translate-y-1/2 z-0" />
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="relative p-8 bg-white dark:bg-navy-700 rounded-xl shadow-md text-center group hover:shadow-xl transition-all z-10">
-                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-crimson-500 text-white flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+              <div className="relative p-8 bg-white dark:bg-navy-700 rounded-xl shadow-md text-center group hover:shadow-xl transition-all z-10 border-t-4 border-crimson-500">
+                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-br from-crimson-400 to-crimson-600 text-white flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
                   1
                 </div>
                 <h3 className="text-xl font-bold mt-6 mb-4 group-hover:text-crimson-500 transition-colors">
@@ -271,8 +396,8 @@ const Services = () => {
                 </p>
               </div>
 
-              <div className="relative p-8 bg-white dark:bg-navy-700 rounded-xl shadow-md text-center group hover:shadow-xl transition-all z-10">
-                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-crimson-500 text-white flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+              <div className="relative p-8 bg-white dark:bg-navy-700 rounded-xl shadow-md text-center group hover:shadow-xl transition-all z-10 border-t-4 border-crimson-500">
+                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-br from-crimson-400 to-crimson-600 text-white flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
                   2
                 </div>
                 <h3 className="text-xl font-bold mt-6 mb-4 group-hover:text-crimson-500 transition-colors">
@@ -284,8 +409,8 @@ const Services = () => {
                 </p>
               </div>
 
-              <div className="relative p-8 bg-white dark:bg-navy-700 rounded-xl shadow-md text-center group hover:shadow-xl transition-all z-10">
-                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-crimson-500 text-white flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+              <div className="relative p-8 bg-white dark:bg-navy-700 rounded-xl shadow-md text-center group hover:shadow-xl transition-all z-10 border-t-4 border-crimson-500">
+                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-br from-crimson-400 to-crimson-600 text-white flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
                   3
                 </div>
                 <h3 className="text-xl font-bold mt-6 mb-4 group-hover:text-crimson-500 transition-colors">
@@ -297,8 +422,8 @@ const Services = () => {
                 </p>
               </div>
 
-              <div className="relative p-8 bg-white dark:bg-navy-700 rounded-xl shadow-md text-center group hover:shadow-xl transition-all z-10">
-                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-crimson-500 text-white flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+              <div className="relative p-8 bg-white dark:bg-navy-700 rounded-xl shadow-md text-center group hover:shadow-xl transition-all z-10 border-t-4 border-crimson-500">
+                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-br from-crimson-400 to-crimson-600 text-white flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
                   4
                 </div>
                 <h3 className="text-xl font-bold mt-6 mb-4 group-hover:text-crimson-500 transition-colors">
@@ -314,12 +439,12 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Benefits Section - with improved layout */}
-      <section className="py-20 px-4">
+      {/* Enhanced Benefits Section */}
+      <section className="py-24 px-4">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
-              <span className="inline-block px-4 py-1.5 bg-crimson-100 dark:bg-navy-700 text-crimson-500 text-sm font-medium rounded-full mb-4">
+              <span className="inline-block px-4 py-1.5 bg-crimson-500/10 text-crimson-500 text-sm font-medium rounded-full mb-4">
                 Business Impact
               </span>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -331,7 +456,7 @@ const Services = () => {
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-6 bg-white dark:bg-navy-700 rounded-xl shadow-sm hover:shadow-md transition-all">
+                <div className="p-6 bg-white dark:bg-navy-700 rounded-xl shadow-sm hover:shadow-md transition-all border-l-4 border-crimson-500">
                   <div className="w-12 h-12 rounded-full bg-crimson-100 dark:bg-navy-600 flex items-center justify-center text-crimson-500 mb-4">
                     <TrendingUp size={24} />
                   </div>
@@ -344,7 +469,7 @@ const Services = () => {
                   </p>
                 </div>
 
-                <div className="p-6 bg-white dark:bg-navy-700 rounded-xl shadow-sm hover:shadow-md transition-all">
+                <div className="p-6 bg-white dark:bg-navy-700 rounded-xl shadow-sm hover:shadow-md transition-all border-l-4 border-crimson-500">
                   <div className="w-12 h-12 rounded-full bg-crimson-100 dark:bg-navy-600 flex items-center justify-center text-crimson-500 mb-4">
                     <Lock size={24} />
                   </div>
@@ -355,7 +480,7 @@ const Services = () => {
                   </p>
                 </div>
 
-                <div className="p-6 bg-white dark:bg-navy-700 rounded-xl shadow-sm hover:shadow-md transition-all">
+                <div className="p-6 bg-white dark:bg-navy-700 rounded-xl shadow-sm hover:shadow-md transition-all border-l-4 border-crimson-500">
                   <div className="w-12 h-12 rounded-full bg-crimson-100 dark:bg-navy-600 flex items-center justify-center text-crimson-500 mb-4">
                     <LineChart size={24} />
                   </div>
@@ -367,7 +492,7 @@ const Services = () => {
                   </p>
                 </div>
 
-                <div className="p-6 bg-white dark:bg-navy-700 rounded-xl shadow-sm hover:shadow-md transition-all">
+                <div className="p-6 bg-white dark:bg-navy-700 rounded-xl shadow-sm hover:shadow-md transition-all border-l-4 border-crimson-500">
                   <div className="w-12 h-12 rounded-full bg-crimson-100 dark:bg-navy-600 flex items-center justify-center text-crimson-500 mb-4">
                     <Zap size={24} />
                   </div>
@@ -384,26 +509,39 @@ const Services = () => {
             <div className="order-1 lg:order-2">
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-crimson-500/20 to-navy-500/20 rounded-2xl blur-xl opacity-70"></div>
-                <img
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3"
-                  alt="Business team meeting"
-                  className="rounded-lg shadow-xl relative z-10 w-full"
-                />
+                <div className="relative overflow-hidden rounded-xl shadow-2xl">
+                  <img
+                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3"
+                    alt="Business team meeting"
+                    className="w-full rounded-lg shadow-xl relative z-10"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section - More interactive and attention-grabbing */}
-      <section className="py-20 px-4 bg-white dark:bg-navy-800">
+      {/* Modern CTA Section */}
+      <section className="py-20 px-4 bg-gray-50 dark:bg-navy-900">
         <div className="container mx-auto">
-          <div className="rounded-3xl bg-gradient-to-br from-navy-600 to-navy-800 p-8 md:p-12 shadow-lg">
-            <div className="max-w-4xl mx-auto text-center text-white">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <div className="rounded-3xl bg-gradient-to-br from-navy-600 via-navy-700 to-navy-800 p-10 md:p-16 shadow-xl relative overflow-hidden">
+            {/* Background decorative elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-crimson-500/20 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-navy-400/20 rounded-full blur-3xl"></div>
+            
+            {/* Subtle grid overlay */}
+            <div className="absolute inset-0 bg-grid-white/5 bg-[size:20px_20px] opacity-30"></div>
+            
+            <div className="max-w-4xl mx-auto text-center text-white relative z-10">
+              <span className="inline-block px-4 py-1.5 bg-crimson-500/20 text-white text-sm font-medium rounded-full mb-6">
+                Take Action Now
+              </span>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">
                 Ready to Transform Your Business?
               </h2>
-              <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-200 mb-10 max-w-3xl mx-auto">
                 Let's discuss how our tailored IT solutions can help you achieve
                 your business goals and drive innovation.
               </p>
@@ -424,7 +562,8 @@ const Services = () => {
                   <a href="/services">View Our Services</a>
                 </Button>
               </div>
-              <div className="mt-8 text-gray-300">
+              <div className="mt-8 text-gray-300 flex items-center justify-center">
+                <Shield className="w-5 h-5 mr-2" />
                 <p>No obligations. Free initial consultation.</p>
               </div>
             </div>
@@ -436,24 +575,6 @@ const Services = () => {
       <BackToTop />
     </div>
   );
-};
-
-// Add this helper function at the top of the file
-const getCategoryDescription = (category: string) => {
-  const descriptions = {
-    cloud:
-      "Transform your business with scalable and secure cloud solutions that optimize performance and reduce costs.",
-    cybersecurity:
-      "Protect your digital assets with comprehensive security solutions that safeguard against evolving threats.",
-    software:
-      "Custom software solutions that streamline operations and deliver exceptional user experiences.",
-    consulting:
-      "Strategic guidance to help you navigate the complex technology landscape and achieve your business goals.",
-    data: "Turn your data into actionable insights with advanced analytics and AI-powered solutions.",
-    managed:
-      "Comprehensive IT management services that ensure your systems run smoothly 24/7.",
-  };
-  return descriptions[category as keyof typeof descriptions];
 };
 
 export default Services;

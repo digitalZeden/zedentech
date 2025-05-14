@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronDown, ChevronUp, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronDown, ChevronUp, ChevronRight, Shield } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
@@ -344,15 +344,25 @@ const CaseStudies = () => {
         <div className="absolute top-10 left-10 w-20 h-20 bg-crimson-400/20 rounded-full blur-xl"></div>
       </section>
 
-      {/* CTA Section - More interactive and attention-grabbing */}
-      <section className="py-20 px-4 bg-white dark:bg-navy-800">
+          {/* Modern CTA Section */}
+          <section className="py-20 px-4 bg-gray-50 dark:bg-navy-900">
         <div className="container mx-auto">
-          <div className="rounded-3xl bg-gradient-to-br from-navy-600 to-navy-800 p-8 md:p-12 shadow-lg">
-            <div className="max-w-4xl mx-auto text-center text-white">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <div className="rounded-3xl bg-gradient-to-br from-navy-600 via-navy-700 to-navy-800 p-10 md:p-16 shadow-xl relative overflow-hidden">
+            {/* Background decorative elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-crimson-500/20 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-navy-400/20 rounded-full blur-3xl"></div>
+            
+            {/* Subtle grid overlay */}
+            <div className="absolute inset-0 bg-grid-white/5 bg-[size:20px_20px] opacity-30"></div>
+            
+            <div className="max-w-4xl mx-auto text-center text-white relative z-10">
+              <span className="inline-block px-4 py-1.5 bg-crimson-500/20 text-white text-sm font-medium rounded-full mb-6">
+                Take Action Now
+              </span>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">
                 Ready to Transform Your Business?
               </h2>
-              <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-200 mb-10 max-w-3xl mx-auto">
                 Let's discuss how our tailored IT solutions can help you achieve
                 your business goals and drive innovation.
               </p>
@@ -373,7 +383,8 @@ const CaseStudies = () => {
                   <a href="/services">View Our Services</a>
                 </Button>
               </div>
-              <div className="mt-8 text-gray-300">
+              <div className="mt-8 text-gray-300 flex items-center justify-center">
+                <Shield className="w-5 h-5 mr-2" />
                 <p>No obligations. Free initial consultation.</p>
               </div>
             </div>
