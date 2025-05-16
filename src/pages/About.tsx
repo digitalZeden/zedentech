@@ -253,20 +253,50 @@ const About = () => {
         </div>
       </section>
       
-      {/* CTA Section */}
-      <section className="py-20 px-4 bg-navy-500 text-white">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Join Our Team</h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Looking to grow your career with a dynamic, innovative technology company? Explore our current opportunities and become part of our exceptional team.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg" className="bg-crimson-500 hover:bg-crimson-600">
-              <a href="/careers">View Open Positions</a>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="bg-transparent text-white border-white hover:bg-white/10">
-              <a href="/contact">Contact Us</a>
-            </Button>
+ {/* Modern CTA Section */}
+ <section className="py-20 px-4 bg-gray-50 dark:bg-navy-900">
+        <div className="container mx-auto">
+          <div className="rounded-3xl bg-gradient-to-br from-navy-600 via-navy-700 to-navy-800 p-10 md:p-16 shadow-xl relative overflow-hidden">
+            {/* Background decorative elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-crimson-500/20 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-navy-400/20 rounded-full blur-3xl"></div>
+            
+            {/* Subtle grid overlay */}
+            <div className="absolute inset-0 bg-grid-white/5 bg-[size:20px_20px] opacity-30"></div>
+            
+            <div className="max-w-4xl mx-auto text-center text-white relative z-10">
+              <span className="inline-block px-4 py-1.5 bg-crimson-500/20 text-white text-sm font-medium rounded-full mb-6">
+                Take Action Now
+              </span>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-xl text-gray-200 mb-10 max-w-3xl mx-auto">
+                Let's discuss how our tailored IT solutions can help you achieve
+                your business goals and drive innovation.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-crimson-500 hover:bg-crimson-600 text-lg"
+                >
+                  <a href="/contact">Schedule a Consultation</a>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="border-[#f02238] text-[#f02238] hover:bg-[#f02238] hover:text-white text-lg"
+                >
+                  <a href="/services">View Our Services</a>
+                </Button>
+              </div>
+              <div className="mt-8 text-gray-300 flex items-center justify-center">
+                <Shield className="w-5 h-5 mr-2" />
+                <p>No obligations. Free initial consultation.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
