@@ -15,42 +15,42 @@ const services = [
     description: "Strategic IT Consulting for Business Growth. We analyze your tech needs and deliver tailored solutions—from cloud migration to cybersecurity—to boost efficiency and cut costs. ",
     icon: <Headphones className="h-6 w-6" />,
     link: "/services/cloud",
-    imageUrl: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3"
+    imageUrl: "./assets/IT_Consulting.jpg"
   },
   {
     title: "IT Professional Services",
     description: "Expert IT Professional Services Tailored to Your Needs. Our certified team combines deep technical expertise with industry best practices to solve your toughest IT challenges. Let us handle the tech so you can focus on your business.",
     icon: <Laptop className="h-6 w-6" />,
     link: "/services/cybersecurity",
-    imageUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3"
+    imageUrl: "./assets/IT_Professional_Services.jpg"
   },
   {
     title: "Application Development",
     description: "Tailored Solutions Through Custom Application Development. We design and build scalable, secure applications perfectly aligned with your unique business processes and goals. Our full-cycle development covers everything from initial concept to deployment and ongoing support. Transform your ideas into powerful digital solutions that drive efficiency and growth.",
     icon: <Code className="h-6 w-6" />,
     link: "/services/software-development",
-    imageUrl: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3"
+    imageUrl: "./assets/Application_Development.jpg"
   },
   {
     title: "Mobile App Development",
     description: "Powerful Mobile Apps Built for Your Business Needs. We develop custom iOS and Android applications with sleek UX, robust functionality, and seamless backend integration. Our agile approach ensures fast delivery of scalable, secure apps tailored to your users and objectives. Let's turn your mobile vision into an engaging digital experience.",
     icon: <Smartphone className="h-6 w-6" />,
     link: "/services/consulting",
-    imageUrl: "https://images.unsplash.com/photo-1537511446984-935f663eb1f4?ixlib=rb-4.0.3"
+    imageUrl: "./assets/Mobile_App_Development.jpg"
   },
   {
     title: "Data Management",
     description: "Streamline Your Data Ecosystem with Expert Data Management We design secure, scalable solutions for data integration, governance, and quality to turn information into your most strategic asset. Our approach ensures clean, organized and accessible data across all your systems. Let's build a future-proof foundation for analytics, AI and business growth.",
     icon: <Database className="h-6 w-6" />,
     link: "/solutions/data-analytics",
-    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3"
+    imageUrl: "./assets/Data_Management.jpg"
   },
   {
     title: "Cloud Migration",
     description: "Streamline Your Business with Seamless Cloud Migration. Our expert team ensures secure, cost-effective transitions to AWS, Azure, or Google Cloud with minimal downtime. We customize solutions to optimize performance, scalability, and security for your specific workloads. Let's modernize your infrastructure and unlock the full potential of cloud technology.",
     icon: <Cloud className="h-6 w-6" />,
     link: "/services/managed-services",
-    imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3"
+    imageUrl: "./assets/Cloud_Migration.jpg"
   }
 ];
 
@@ -123,7 +123,7 @@ const Home = () => {
           primaryLink: "/contact",
           secondaryLink: "/services"
         }}
-        imageUrl="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3"
+        imageUrl="./assets/home.jpg"
       />
       
       {/* Services Section with Enhanced UI */}

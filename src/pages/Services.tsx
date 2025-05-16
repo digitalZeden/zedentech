@@ -30,7 +30,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import { Button } from "@/components/ui/button";
-import ServiceCard from "@/components/ServiceCard";
+import ServiceCard from "@/components/ServiceCard"; 
 
 // Services data - unchanged
 const services = [
@@ -43,8 +43,7 @@ const services = [
           "Strategic IT Consulting for Business Growth. We analyze your tech needs and deliver tailored solutions—from cloud migration to cybersecurity—to boost efficiency and cut costs.",
         icon: <Headphones className="h-6 w-6" />,
         link: "/services/cloud/migration",
-        imageUrl:
-          "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3",
+        imageUrl: "./assets/IT_Consulting.jpg",
       },
       {
         title: "IT Professional Services",
@@ -52,8 +51,7 @@ const services = [
           "Expert IT Professional Services Tailored to Your Needs. Our certified team combines deep technical expertise with industry best practices to solve your toughest IT challenges. Let us handle the tech so you can focus on your business.",
         icon: <Users className="h-6 w-6" />,
         link: "/services/cloud/infrastructure",
-        imageUrl:
-          "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3",
+        imageUrl: "./assets/IT_Professional_Services.jpg",
       },
       {
         title: "IT Infrastruresture",
@@ -62,7 +60,7 @@ const services = [
         icon: <Server className="h-6 w-6" />,
         link: "/services/cloud/multi-cloud",
         imageUrl:
-          "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3",
+          "./assets/IT_Infrastruresture.jpg",
       },
     ],
   },
@@ -76,7 +74,7 @@ const services = [
         icon: <Cloud className="h-6 w-6" />,
         link: "/services/cybersecurity/assessment",
         imageUrl:
-          "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3",
+          "./assets/Cloud_Migration.jpg",
       },
       {
         title: "Cyber Security Assesment",
@@ -85,7 +83,7 @@ const services = [
         icon: <Shield className="h-6 w-6" />,
         link: "/services/cybersecurity/protection",
         imageUrl:
-          "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3",
+          "./assets/Cyber_Security_Assesment.jpg",
       },
       {
         title: "Risk & Compilance Services",
@@ -94,7 +92,7 @@ const services = [
         icon: <FileCheck className="h-6 w-6" />,
         link: "/services/cybersecurity/compliance",
         imageUrl:
-          "https://images.unsplash.com/photo-1509822929063-6b6cfc9b42f2?ixlib=rb-4.0.3",
+          "./assets/Risk_Compilance_Services.jpg",
       },
     ],
   },
@@ -108,7 +106,7 @@ const services = [
         icon: <Code className="h-6 w-6" />,
         link: "/services/software/custom",
         imageUrl:
-          "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3",
+          "./assets/Application_Development.jpg",
       },
       {
         title: "Mobile App Development",
@@ -117,7 +115,7 @@ const services = [
         icon: <Smartphone className="h-6 w-6" />,
         link: "/services/software/mobile",
         imageUrl:
-          "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3",
+          "./assets/Mobile_App_Development.jpg",
       },
       {
         title: "User Experience Services",
@@ -126,7 +124,7 @@ const services = [
         icon: <Share2 className="h-6 w-6" />,
         link: "/services/software/api",
         imageUrl:
-          "https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3",
+          "./assets/User_Experience_Services.jpg",
       },
     ],
   },
@@ -140,7 +138,7 @@ const services = [
         icon: <BarChart2 className="h-6 w-6" />,
         link: "/services/data/analytics",
         imageUrl:
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3",
+          "./assets/Data_Analytics.jpg",
       },
       {
         title: "Data Visulization",
@@ -149,7 +147,7 @@ const services = [
         icon: <Brain className="h-6 w-6" />,
         link: "/services/data/ai",
         imageUrl:
-          "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3",
+          "./assets/Data_visuals.png",
       },
       {
         title: "Data Management",
@@ -158,7 +156,7 @@ const services = [
         icon: <Database className="h-6 w-6" />,
         link: "/services/data/management",
         imageUrl:
-          "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3",
+          "./assets/Data_Management.jpg",
       },
     ],
   },
@@ -172,7 +170,7 @@ const services = [
         icon: <Server className="h-6 w-6" />,
         link: "/services/managed/infrastructure",
         imageUrl:
-          "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3",
+          "./assets/AIML_Solution.jpg",
       },
       {
         title: "Salesforce Consulting",
@@ -181,16 +179,16 @@ const services = [
         icon: <Clock className="h-6 w-6" />,
         link: "/services/managed/monitoring",
         imageUrl:
-          "https://images.unsplash.com/photo-1531973576160-7125cd663d86?ixlib=rb-4.0.3",
+          "./assets/Salesforce.png",
       },
       {
-        title: "Business Workflow Solutions ",
+        title: "Business Workflow Solutions",
         description:
           "Transform Operations with Smart Workflow Solutions. We analyze, automate and optimize your business processes to eliminate inefficiencies and boost productivity. Our tailored systems integrate seamlessly with your existing tools to create frictionless workflows. Let's redesign how work gets done to save time and reduce costs.",
         icon: <Headphones className="h-6 w-6" />,
         link: "/services/managed/helpdesk",
         imageUrl:
-          "https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-4.0.3",
+          "./assets/BusinessWorkflowSolutions.jpg",
       },
     ],
   },
@@ -511,7 +509,7 @@ const Services = () => {
                 <div className="absolute -inset-4 bg-gradient-to-r from-crimson-500/20 to-navy-500/20 rounded-2xl blur-xl opacity-70"></div>
                 <div className="relative overflow-hidden rounded-xl shadow-2xl">
                   <img
-                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3"
+                    src="./assets/BenefitsofOurServices.jpg"
                     alt="Business team meeting"
                     className="w-full rounded-lg shadow-xl relative z-10"
                   />
