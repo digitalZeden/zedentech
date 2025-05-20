@@ -305,19 +305,10 @@ const Services = () => {
             </p>
             
             <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Button
-                asChild
-                size="lg"
-                className="bg-crimson-500 hover:bg-crimson-600"
-              >
+            <Button className="bg-[#f02238] text-white hover:bg-[#f02238]/90 text-lg px-8 py-6 rounded-lg font-medium">
                 <a href="/services">Explore Services</a>
               </Button>
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="border-[#f02238] text-[#f02238] hover:bg-[#f02238] hover:text-white text-lg"
-              >
+              <Button variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-6 rounded-lg font-medium">
                 <a href="/contact">Contact Us</a>
               </Button>
             </div>

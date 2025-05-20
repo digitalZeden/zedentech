@@ -178,11 +178,7 @@ const CaseStudies = () => {
               to solve complex challenges and deliver exceptional results.
             </p>
             <div className="flex gap-4">
-              <Button
-                asChild
-                size="lg"
-                className="bg-crimson-500 hover:bg-crimson-600"
-              >
+            <Button className="bg-[#f02238] text-white hover:bg-[#f02238]/90 text-lg px-8 py-6 rounded-lg font-medium">
                 <a href="/contact">Start Your Project</a>
               </Button>
               <Button
